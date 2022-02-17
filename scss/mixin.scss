@@ -1,0 +1,23 @@
+@mixin buttons($color, $pad-tb, $pad-rl, $fz, $radius: 0) {
+    border-radius: $radius;
+    background-color: $color;
+    border: none;
+    padding: $pad-tb $pad-rl;
+    cursor: pointer;
+    font-size: $fz;
+}
+
+@mixin centerize($direction: row, $space: "") {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+    justify-content: $space;
+}
+
+@mixin rectangle($width, $height, $color, $radius) {
+    width: $width;
+    height: $height;
+    background-color: $color;
+    border-radius: $radius;
+}
