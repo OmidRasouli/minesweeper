@@ -1,1 +1,80 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #010333;
+  width: 100vw;
+  height: 100vh;
+}
+
+.startPanel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: "";
+      -ms-flex-pack: "";
+          justify-content: "";
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+.startPanel .content {
+  background-color: #efeff1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 200px;
+  height: 300px;
+  background-color: #efeff1;
+  border-radius: 5px;
+}
+
+.startPanel .content #startGame {
+  border-radius: 3px;
+  background-color: #efeff1;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 1.1em;
+  -webkit-box-shadow: 0 0 6px 1px #010333;
+          box-shadow: 0 0 6px 1px #010333;
+  outline: none;
+  border: none;
+}
+
+.startPanel .content #difficulty {
+  font-size: 1.1em;
+}
+
+#game {
+  background-color: #efeff1;
+}
+/*# sourceMappingURL=main.css.map */
