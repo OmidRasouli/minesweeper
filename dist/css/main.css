@@ -87,6 +87,7 @@ body {
       grid-template-columns: repeat(9, 1fr);
   -ms-grid-rows: auto;
       grid-template-rows: auto;
+  gap: 2px;
 }
 
 .board .cell {
@@ -96,11 +97,29 @@ body {
   border-radius: 5px;
   -webkit-box-shadow: 0 0 10px 0 #010333 inset;
           box-shadow: 0 0 10px 0 #010333 inset;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: "";
+      -ms-flex-pack: "";
+          justify-content: "";
+  text-align: center;
 }
 
 .board .cell::before {
   content: '';
   display: block;
+  float: left;
   padding-top: 100%;
 }
 

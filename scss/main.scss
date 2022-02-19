@@ -39,14 +39,17 @@ body {
 
 .board {
   &.beginner {
-    @include board(300px, 9);
+    @include board(300px, 9, 2px);
   }
 
   .cell {
     @include rectangle(auto, auto, $silver, 5px, 0 0 10px 0 $dark-blue inset);
+    @include centerize;
+    text-align: center;
     &::before {
       content: '';
       display: block;
+      float: left;
       padding-top: 100%;
   } 
   }
