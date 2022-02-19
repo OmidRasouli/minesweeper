@@ -17,10 +17,11 @@ class Game {
     );
 
     mines.forEach((x) => {
-      let row = Math.floor(x / grids[this.difficulty][0]);
-      let col = x % grids[this.difficulty][1];
+      let row = Math.trunc(x / grids[this.difficulty][1]);
+      let col = x - row * grids[this.difficulty][1];
 
-      this.board[row][col] = "*";
+      this.board[row][col] = '*'
+
       this.noticeAround(
         row,
         col,
@@ -41,21 +42,13 @@ class Game {
   }
 
   noticeAround(row, col, x, y) {
-    if (
-      row - 1 > -1 &&
-      col - 1 > -1 &&
-      !isNaN(this.board[row - 1][col - 1])
-    )
+    if (row - 1 > -1 && col - 1 > -1 && !isNaN(this.board[row - 1][col - 1]))
       this.board[row - 1][col - 1]++;
 
     if (row - 1 > -1 && !isNaN(this.board[row - 1][col]))
       this.board[row - 1][col]++;
 
-    if (
-      row - 1 > -1 &&
-      col + 1 < y &&
-      !isNaN(this.board[row - 1][col + 1])
-    )
+    if (row - 1 > -1 && col + 1 < y && !isNaN(this.board[row - 1][col + 1]))
       this.board[row - 1][col + 1]++;
 
     if (col - 1 > -1 && !isNaN(this.board[row][col - 1]))
@@ -64,21 +57,13 @@ class Game {
     if (col + 1 < y && !isNaN(this.board[row][col + 1]))
       this.board[row][col + 1]++;
 
-    if (
-      row + 1 < x &&
-      col - 1 > -1 &&
-      !isNaN(this.board[row + 1][col - 1])
-    )
+    if (row + 1 < x && col - 1 > -1 && !isNaN(this.board[row + 1][col - 1]))
       this.board[row + 1][col - 1]++;
 
     if (row + 1 < x && !isNaN(this.board[row + 1][col]))
       this.board[row + 1][col]++;
 
-    if (
-      row + 1 < x &&
-      col + 1 < y &&
-      !isNaN(this.board[row + 1][col + 1])
-    )
+    if (row + 1 < x && col + 1 < y && !isNaN(this.board[row + 1][col + 1]))
       this.board[row + 1][col + 1]++;
   }
 }
@@ -93,7 +78,4 @@ document.querySelector("#startGame").addEventListener("click", () => {
   game.startGame();
 });
 
-(function () {
-  document.querySelector(".startPanel").style = "display:none";
-  game.startGame();
-})();
+(function () {})();
