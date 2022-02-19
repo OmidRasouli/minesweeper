@@ -15,9 +15,18 @@
     justify-content: $space;
 }
 
-@mixin rectangle($width, $height, $color, $radius) {
+@mixin rectangle($width, $height, $color, $radius, $box-shadow: none) {
     width: $width;
     height: $height;
     background-color: $color;
     border-radius: $radius;
+    box-shadow: $box-shadow;
+}
+
+@mixin board($max-width, $cell-count) {
+    width: 100%;
+    max-width: $max-width;
+    display: grid;
+    grid-template-columns: repeat( $cell-count, 1fr );
+    grid-template-rows: auto;
 }
