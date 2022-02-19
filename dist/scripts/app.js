@@ -1,3 +1,6 @@
+//Define board - NUMBER is temporary
+const cellButton = "<div class='cell'>NUMBER</div>";
+
 //Class of the game
 class Game {
   //Set difficulty
@@ -6,7 +9,7 @@ class Game {
   }
 
   //By calling this method game will start
-  startGame() {
+  startGame(boardEl) {
     //Define board dimensions (e.g.[9x9]) and mines count (e.g.[10])
     let grids = [
       [9, 9, 10],
@@ -28,11 +31,11 @@ class Game {
       //Calc row and col by using index
       let row = Math.trunc(index / grids[this.difficulty][1]);
       let col = index - row * grids[this.difficulty][1];
-      
-      //Fill the cell by * char when it must be mine
-      this.board[row][col] = '*'
 
-      //Call the noticeAround for adding a number to cells which are around the mine 
+      //Fill the cell by * char when it must be mine
+      this.board[row][col] = "*";
+
+      //Call the noticeAround for adding a number to cells which are around the mine
       this.noticeAround(
         row,
         col,
@@ -40,6 +43,8 @@ class Game {
         grids[this.difficulty][1]
       );
     });
+    //Generate the cells in the HTML file
+    this.generateCells(boardEl);
     console.log(this.board);
   }
 
@@ -93,6 +98,17 @@ class Game {
     if (row + 1 < x && col + 1 < y && !isNaN(this.board[row + 1][col + 1]))
       this.board[row + 1][col + 1]++;
   }
+
+  //Generate the cells in the HTML file
+  generateCells(board) {
+    this.board.forEach((c) => {
+      c.forEach(
+        (x) =>
+        //X is the value of the board 
+        board.insertAdjacentHTML("beforeend", cellButton.replace("NUMBER", x))
+      );
+    });
+  }
 }
 
 //Create a game
@@ -106,7 +122,9 @@ document.querySelector("#difficulty").addEventListener("change", (x) => {
 //Add event to button (Start Game)
 document.querySelector("#startGame").addEventListener("click", () => {
   document.querySelector(".startPanel").style = "display:none";
-  game.startGame();
+  let board = document.querySelector(".board");
+  board.classList.add(document.querySelector("#difficulty").value);
+  game.startGame(board);
 });
 
 (function () {})();
