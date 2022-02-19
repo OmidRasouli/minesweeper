@@ -67,6 +67,52 @@ class Game {
   //789
   noticeAround(row, col, x, y) {
     //Cell 1
+    if (row - 1 > -1 && col - 1 > -1 && !isNaN(this.board[row - 1][col - 1])) {
+      this.board[row - 1][col - 1]++;
+      return;
+    }
+
+    //Cell 2
+    if (row - 1 > -1 && !isNaN(this.board[row - 1][col])) {
+      this.board[row - 1][col]++;
+      return;
+    }
+
+    //Cell 3
+    if (row - 1 > -1 && col + 1 < y && !isNaN(this.board[row - 1][col + 1])) {
+      this.board[row - 1][col + 1]++;
+      return;
+    }
+
+    //Cell 4
+    if (col - 1 > -1 && !isNaN(this.board[row][col - 1])) {
+      this.board[row][col - 1]++;
+      return;
+    }
+
+    //Cell 6
+    if (col + 1 < y && !isNaN(this.board[row][col + 1])) {
+      this.board[row][col + 1]++;
+      return;
+    }
+
+    //Cell 7
+    if (row + 1 < x && col - 1 > -1 && !isNaN(this.board[row + 1][col - 1])) {
+      this.board[row + 1][col - 1]++;
+      return;
+    }
+
+    //Cell 8
+    if (row + 1 < x && !isNaN(this.board[row + 1][col])) {
+      this.board[row + 1][col]++;
+      return;
+    }
+
+    //Cell 9
+    if (row + 1 < x && col + 1 < y && !isNaN(this.board[row + 1][col + 1])) {
+      this.board[row + 1][col + 1]++;
+      return;
+    }
     if (row - 1 > -1 && col - 1 > -1 && !isNaN(this.board[row - 1][col - 1]))
       this.board[row - 1][col - 1]++;
 
