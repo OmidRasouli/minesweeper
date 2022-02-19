@@ -37,6 +37,22 @@ body {
   }
 }
 
+.board {
+  &.beginner {
+    @include board(300px, 9);
+  }
+
+  .cell {
+    @include rectangle(auto, auto, $silver, 5px, 0 0 10px 0 $dark-blue inset);
+    &::before {
+      content: '';
+      display: block;
+      padding-top: 100%;
+  } 
+  }
+}
+
 #game {
-  background-color: $silver;
+  height: 100%;
+  @include centerize;
 }
