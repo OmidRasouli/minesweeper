@@ -90,6 +90,30 @@ body {
   gap: 2px;
 }
 
+.board.normal {
+  width: 100%;
+  max-width: 500px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[16];
+      grid-template-columns: repeat(16, 1fr);
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  gap: 2px;
+}
+
+.board.hard {
+  width: 100%;
+  max-width: 500px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[16];
+      grid-template-columns: repeat(16, 1fr);
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  gap: 2px;
+}
+
 .board .cell {
   width: auto;
   height: auto;
