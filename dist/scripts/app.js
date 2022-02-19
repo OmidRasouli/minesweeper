@@ -1,26 +1,38 @@
+//Class of the game
 class Game {
+  //Set difficulty
   constructor(difficulty) {
     this.difficulty = difficulty;
   }
 
+  //By calling this method game will start
   startGame() {
+    //Define board dimensions (e.g.[9x9]) and mines count (e.g.[10])
     let grids = [
       [9, 9, 10],
       [16, 16, 40],
       [30, 16, 99],
     ];
+    //Get index of the board
     let size = grids[this.difficulty][0] * grids[this.difficulty][1];
+    //Generating mines
     let mines = this.mineGenerator(size, grids[this.difficulty][2]);
 
+    //Craete board and fill it by 0
     this.board = Array.from({ length: grids[this.difficulty][0] }, () =>
       Array.from({ length: grids[this.difficulty][1] }, () => 0)
     );
 
-    mines.forEach((x) => {
-      let row = Math.floor(x / grids[this.difficulty][0]);
-      let col = x % grids[this.difficulty][1];
+    //Fill the board by mines
+    mines.forEach((index) => {
+      //Calc row and col by using index
+      let row = Math.trunc(index / grids[this.difficulty][1]);
+      let col = index - row * grids[this.difficulty][1];
+      
+      //Fill the cell by * char when it must be mine
+      this.board[row][col] = '*'
 
-      this.board[row][col] = "*";
+      //Call the noticeAround for adding a number to cells which are around the mine 
       this.noticeAround(
         row,
         col,
@@ -31,8 +43,11 @@ class Game {
     console.log(this.board);
   }
 
+  //Generating random and unique number for index of the board
   mineGenerator(size, minesCount) {
+    //By using Set() make it unique
     let mines = new Set();
+    //Generate numbers
     while (mines.size < minesCount) {
       let number = Math.trunc(Math.random() * size);
       mines.add(number);
@@ -40,60 +55,58 @@ class Game {
     return [...mines];
   }
 
+  //Add a number to the cells which are around the mine
+  //The pattern is below
+  //123
+  //4*6
+  //789
   noticeAround(row, col, x, y) {
-    if (
-      row - 1 > -1 &&
-      col - 1 > -1 &&
-      !isNaN(this.board[row - 1][col - 1])
-    )
+    //Cell 1
+    if (row - 1 > -1 && col - 1 > -1 && !isNaN(this.board[row - 1][col - 1]))
       this.board[row - 1][col - 1]++;
 
+    //Cell 2
     if (row - 1 > -1 && !isNaN(this.board[row - 1][col]))
       this.board[row - 1][col]++;
 
-    if (
-      row - 1 > -1 &&
-      col + 1 < y &&
-      !isNaN(this.board[row - 1][col + 1])
-    )
+    //Cell 3
+    if (row - 1 > -1 && col + 1 < y && !isNaN(this.board[row - 1][col + 1]))
       this.board[row - 1][col + 1]++;
 
+    //Cell 4
     if (col - 1 > -1 && !isNaN(this.board[row][col - 1]))
       this.board[row][col - 1]++;
 
+    //Cell 6
     if (col + 1 < y && !isNaN(this.board[row][col + 1]))
       this.board[row][col + 1]++;
 
-    if (
-      row + 1 < x &&
-      col - 1 > -1 &&
-      !isNaN(this.board[row + 1][col - 1])
-    )
+    //Cell 7
+    if (row + 1 < x && col - 1 > -1 && !isNaN(this.board[row + 1][col - 1]))
       this.board[row + 1][col - 1]++;
 
+    //Cell 8
     if (row + 1 < x && !isNaN(this.board[row + 1][col]))
       this.board[row + 1][col]++;
 
-    if (
-      row + 1 < x &&
-      col + 1 < y &&
-      !isNaN(this.board[row + 1][col + 1])
-    )
+    //Cell 9
+    if (row + 1 < x && col + 1 < y && !isNaN(this.board[row + 1][col + 1]))
       this.board[row + 1][col + 1]++;
   }
 }
 
+//Create a game
 let game = new Game(0);
 
+//Add event to the dropdown list (difficulty)
 document.querySelector("#difficulty").addEventListener("change", (x) => {
   game.difficulty = x.target.selectedIndex;
 });
+
+//Add event to button (Start Game)
 document.querySelector("#startGame").addEventListener("click", () => {
   document.querySelector(".startPanel").style = "display:none";
   game.startGame();
 });
 
-(function () {
-  document.querySelector(".startPanel").style = "display:none";
-  game.startGame();
-})();
+(function () {})();
