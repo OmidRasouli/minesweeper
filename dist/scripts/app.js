@@ -147,12 +147,13 @@ class Game {
 
   //Generate the cells in the HTML file
   generateCells(board) {
-    this.board.forEach((c) => {
-      c.forEach(
-        (x) =>
-        //X is the value of the board 
-        board.insertAdjacentHTML("beforeend", cellButton.replace("NUMBER", x))
-      );
+    this.board.forEach((c, i) => {
+      c.forEach((x, j) => {
+        let button = document.createElement("button");
+        button.addEventListener("click", () => this.checkCell(i, j));
+        button.classList.add("cell");
+        buttons.set(`${i},${j}`, board.appendChild(button));
+      });
     });
   }
 }
