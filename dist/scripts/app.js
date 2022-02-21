@@ -140,8 +140,27 @@ class Game {
       this.board[row + 1][col]++;
 
     //Cell 9
-    if (row + 1 < x && col + 1 < y && !isNaN(this.board[row + 1][col + 1]))
-      this.board[row + 1][col + 1]++;
+  //Check cell for game state
+  checkCell(i, j) {
+    //Is this a mine?
+    if (this.board[i][j] === "*") {
+      console.log("You lose!");
+      buttons.get(`${i},${j}`).innerHTML = this.board[i][j];
+      return "*";
+    }
+    //Is there a mine nearby?
+    if (this.board[i][j] > 0) {
+      console.log("Oops!");
+      let btn = buttons.get(`${i},${j}`);
+      btn.innerHTML = this.board[i][j];
+      btn.disabled = true;
+      return this.board[i][j];
+    }
+    //Wow safe field
+    if (this.board[i][j] === 0) {
+      console.log("Yey!");
+      return null;
+    }
   }
 
   //Generate the cells in the HTML file
