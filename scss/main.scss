@@ -62,6 +62,9 @@ body {
 }
 
 #game {
-  height: 100%;
   @include centerize;
+}
+
+.fullHeight {
+  min-height: 100%;
 }
