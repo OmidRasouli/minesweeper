@@ -118,6 +118,8 @@ class Game {
       btn.disabled = true;
       //Show the number if the field as buttons value
       btn.innerHTML = this.board[dim[0]][dim[1]];
+      //Add color of the text
+      btn.classList.add(`n${this.board[dim[0]][dim[1]]}`);
       //Make it neutral
       this.board[dim[0]][dim[1]] = "-";
       return;
@@ -273,6 +275,7 @@ class Game {
       console.log("Oops!");
       let btn = buttons.get(`${i},${j}`);
       btn.innerHTML = this.board[i][j];
+      btn.classList.add(`n${this.board[i][j]}`);
       btn.disabled = true;
       return this.board[i][j];
     }
