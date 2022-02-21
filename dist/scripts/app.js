@@ -170,6 +170,7 @@ document.querySelector("#startGame").addEventListener("click", () => {
   document.querySelector(".startPanel").style = "display:none";
   let board = document.querySelector(".board");
   board.classList.add(document.querySelector("#difficulty").value);
+  document.querySelector("#game").classList.add("fullHeight");
   game.startGame(board);
 });
 
