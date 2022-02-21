@@ -1,5 +1,5 @@
-//Define board - NUMBER is temporary
-const cellButton = "<div class='cell'>NUMBER</div>";
+//Map of buttons
+const buttons = new Map();
 
 //Class of the game
 class Game {
