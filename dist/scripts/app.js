@@ -36,12 +36,7 @@ class Game {
       this.board[row][col] = "*";
 
       //Call the noticeAround for adding a number to cells which are around the mine
-      this.noticeAround(
-        row,
-        col,
-        grids[this.difficulty][0],
-        grids[this.difficulty][1]
-      );
+      this.noticeAround(row, col);
     });
     //Generate the cells in the HTML file
     this.generateCells(boardEl);
