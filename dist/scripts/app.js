@@ -173,4 +173,5 @@ document.querySelector("#startGame").addEventListener("click", () => {
   game.startGame(board);
 });
 
+//Need to exec once
 (function () {})();
