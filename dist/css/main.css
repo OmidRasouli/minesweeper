@@ -148,7 +148,6 @@ body {
 }
 
 #game {
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -165,5 +164,9 @@ body {
   -webkit-box-pack: "";
       -ms-flex-pack: "";
           justify-content: "";
+}
+
+.fullHeight {
+  min-height: 100%;
 }
 /*# sourceMappingURL=main.css.map */
