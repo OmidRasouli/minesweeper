@@ -48,16 +48,21 @@ body {
 }
 
 .board {
+  background-color: $silver;
+  border-left: 5px solid $gray;
+  border-top: 5px solid $gray;
+  border-right: 5px solid $white;
+  border-bottom: 5px solid $white;
+
   &.beginner {
-    @include board(300px, 9, 0);
+    @include board(9, 0);
   }
   &.normal {
-    @include board(500px, 16, 2px);
+    @include board(16, 0);
   }
   &.hard {
-    @include board(500px, 16, 2px);
+    @include board(16, 0);
   }
-
   .cell {
     @include rectangle(24px, 24px, $silver, 0, none);
     @include centerize;
@@ -88,6 +93,52 @@ body {
 
 #game {
   @include centerize;
+
+  .scoreBoard {
+    @include centerize(row, space-between);
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: $silver;
+    border-left: 5px solid $gray;
+    border-top: 5px solid $gray;
+    border-right: 5px solid $white;
+    border-bottom: 5px solid $white;
+    margin-bottom: 10px;
+
+    .score {
+      @include rectangle(50px, 30px, $n-black, 0, none);
+      border-left: 1px solid $gray;
+      border-top: 1px solid $gray;
+      border-right: 1px solid $white;
+      border-bottom: 1px solid $white;
+    }
+
+    .stat {
+      @include rectangle(30px, 30px, $n-black, 0, none);
+      border-left: 1px solid $gray;
+      border-top: 1px solid $gray;
+      border-right: 1px solid $white;
+      border-bottom: 1px solid $white;
+    }
+
+    .timer {
+      @include rectangle(50px, 30px, $n-black, 0, none);
+      border-left: 1px solid $gray;
+      border-top: 1px solid $gray;
+      border-right: 1px solid $white;
+      border-bottom: 1px solid $white;
+    }
+  }
+
+  .panel {
+    padding: 10px;
+    background-color: $silver;
+    border-left: 5px solid $white;
+    border-top: 5px solid $white;
+    border-right: 5px solid $gray;
+    border-bottom: 5px solid $gray;
+  }
 }
 
 .fullHeight {

@@ -23,10 +23,8 @@
     box-shadow: $box-shadow;
 }
 
-@mixin board($max-width, $cell-count, $gap) {
-    width: 100%;
-    max-width: $max-width;
-    display: grid;
+@mixin board($cell-count, $gap) {
+    display: inline-grid;
     grid-template-columns: repeat( $cell-count, 24px);
     grid-template-rows: auto;
     gap: $gap;
