@@ -1,3 +1,5 @@
+//You can check this repo: https://github.com/OmidRasouli/digital-clock
+
 class Timer {
   //List for second lines [Tens[], Ones[]]
   secondsLines = [];
