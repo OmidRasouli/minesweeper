@@ -248,7 +248,8 @@ body {
   border-bottom: 1px solid #ffffff;
 }
 
-#game .score-board .timer {
+#game .score-board .timer,
+#game .score-board .mines {
   width: 70px;
   height: 30px;
   background-color: black;
@@ -268,7 +269,8 @@ body {
           justify-content: center;
 }
 
-#game .score-board .timer .number {
+#game .score-board .timer .number,
+#game .score-board .mines .number {
   width: 20px;
   display: -ms-grid;
   display: grid;
@@ -281,7 +283,8 @@ body {
           align-items: center;
 }
 
-#game .score-board .timer .number .columns {
+#game .score-board .timer .number .columns,
+#game .score-board .mines .number .columns {
   display: -ms-grid;
   display: grid;
   gap: 4px;
@@ -289,11 +292,13 @@ body {
       align-content: space-between;
 }
 
-#game .score-board .timer .number .columns.center-coloumn {
+#game .score-board .timer .number .columns.center-coloumn,
+#game .score-board .mines .number .columns.center-coloumn {
   height: 28px;
 }
 
-#game .score-board .timer .number .columns .line-1 {
+#game .score-board .timer .number .columns .line-1,
+#game .score-board .mines .number .columns .line-1 {
   opacity: 0.4;
   position: relative;
   width: 4px;
@@ -301,7 +306,8 @@ body {
   background-color: red;
 }
 
-#game .score-board .timer .number .columns .line-1::after {
+#game .score-board .timer .number .columns .line-1::after,
+#game .score-board .mines .number .columns .line-1::after {
   content: "";
   width: 0;
   height: 0;
@@ -312,7 +318,8 @@ body {
   border-right: 2px solid transparent;
 }
 
-#game .score-board .timer .number .columns .line-1::before {
+#game .score-board .timer .number .columns .line-1::before,
+#game .score-board .mines .number .columns .line-1::before {
   content: "";
   width: 0;
   height: 0;
@@ -323,7 +330,8 @@ body {
   border-right: 2px solid transparent;
 }
 
-#game .score-board .timer .number .columns .line-2 {
+#game .score-board .timer .number .columns .line-2,
+#game .score-board .mines .number .columns .line-2 {
   opacity: 0.4;
   position: relative;
   width: 8px;
@@ -331,7 +339,8 @@ body {
   background-color: red;
 }
 
-#game .score-board .timer .number .columns .line-2::after {
+#game .score-board .timer .number .columns .line-2::after,
+#game .score-board .mines .number .columns .line-2::after {
   content: "";
   width: 0;
   height: 0;
@@ -342,7 +351,8 @@ body {
   border-top: 2px solid transparent;
 }
 
-#game .score-board .timer .number .columns .line-2::before {
+#game .score-board .timer .number .columns .line-2::before,
+#game .score-board .mines .number .columns .line-2::before {
   content: "";
   width: 0;
   height: 0;
@@ -353,11 +363,13 @@ body {
   border-top: 2px solid transparent;
 }
 
-#game .score-board .timer .number .columns .show-number {
+#game .score-board .timer .number .columns .show-number,
+#game .score-board .mines .number .columns .show-number {
   opacity: 1;
 }
 
-#game .score-board .timer .dot {
+#game .score-board .timer .dot,
+#game .score-board .mines .dot {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -373,14 +385,16 @@ body {
           animation: blink 1s infinite steps(2, jump-none);
 }
 
-#game .score-board .timer .dot::before {
+#game .score-board .timer .dot::before,
+#game .score-board .mines .dot::before {
   background-color: red;
   width: 4px;
   height: 4px;
   content: "";
 }
 
-#game .score-board .timer .dot::after {
+#game .score-board .timer .dot::after,
+#game .score-board .mines .dot::after {
   background-color: red;
   width: 4px;
   height: 4px;

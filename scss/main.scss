@@ -125,7 +125,8 @@ body {
       border-bottom: 1px solid $white;
     }
 
-    .timer {
+    .timer,
+    .mines {
       @include rectangle(70px, 30px, $n-black, 0, none);
       border-left: 1px solid $gray;
       border-top: 1px solid $gray;
