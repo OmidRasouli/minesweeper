@@ -10,7 +10,7 @@ body {
   height: 100vh;
 }
 
-.startPanel {
+.start-panel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,7 +35,7 @@ body {
           box-shadow: none;
 }
 
-.startPanel .content {
+.start-panel .content {
   background-color: #c6c6c6;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -61,7 +61,7 @@ body {
           box-shadow: none;
 }
 
-.startPanel .content #startGame {
+.start-panel .content #start-game {
   border-radius: 3px;
   background-color: #c6c6c6;
   border: none;
@@ -74,7 +74,7 @@ body {
   border: none;
 }
 
-.startPanel .content #difficulty {
+.start-panel .content #difficulty {
   font-size: 1.1em;
 }
 
@@ -193,7 +193,7 @@ body {
           justify-content: "";
 }
 
-#game .scoreBoard {
+#game .score-board {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -222,8 +222,8 @@ body {
   margin-bottom: 10px;
 }
 
-#game .scoreBoard .score {
-  width: 50px;
+#game .score-board .mines-count {
+  width: 70px;
   height: 30px;
   background-color: black;
   border-radius: 0;
@@ -235,7 +235,7 @@ body {
   border-bottom: 1px solid #ffffff;
 }
 
-#game .scoreBoard .stat {
+#game .score-board .stat {
   width: 30px;
   height: 30px;
   background-color: black;
@@ -248,8 +248,9 @@ body {
   border-bottom: 1px solid #ffffff;
 }
 
-#game .scoreBoard .timer {
-  width: 50px;
+#game .score-board .timer,
+#game .score-board .mines {
+  width: 70px;
   height: 30px;
   background-color: black;
   border-radius: 0;
@@ -259,6 +260,157 @@ body {
   border-top: 1px solid #808080;
   border-right: 1px solid #ffffff;
   border-bottom: 1px solid #ffffff;
+  display: -ms-inline-grid;
+  display: inline-grid;
+  gap: 3px;
+  grid-auto-flow: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#game .score-board .timer .number,
+#game .score-board .mines .number {
+  width: 20px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 4px 8px 4px;
+      grid-template-columns: 4px 8px 4px;
+  grid-auto-flow: column;
+  gap: 2px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#game .score-board .timer .number .columns,
+#game .score-board .mines .number .columns {
+  display: -ms-grid;
+  display: grid;
+  gap: 4px;
+  -ms-flex-line-pack: justify;
+      align-content: space-between;
+}
+
+#game .score-board .timer .number .columns.center-coloumn,
+#game .score-board .mines .number .columns.center-coloumn {
+  height: 28px;
+}
+
+#game .score-board .timer .number .columns .line-1,
+#game .score-board .mines .number .columns .line-1 {
+  opacity: 0.4;
+  position: relative;
+  width: 4px;
+  height: 8px;
+  background-color: red;
+}
+
+#game .score-board .timer .number .columns .line-1::after,
+#game .score-board .mines .number .columns .line-1::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-bottom: 2px solid red;
+  top: -2px;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+}
+
+#game .score-board .timer .number .columns .line-1::before,
+#game .score-board .mines .number .columns .line-1::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-top: 2px solid red;
+  bottom: -2px;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+}
+
+#game .score-board .timer .number .columns .line-2,
+#game .score-board .mines .number .columns .line-2 {
+  opacity: 0.4;
+  position: relative;
+  width: 8px;
+  height: 4px;
+  background-color: red;
+}
+
+#game .score-board .timer .number .columns .line-2::after,
+#game .score-board .mines .number .columns .line-2::after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-right: 2px solid red;
+  left: -2px;
+  border-bottom: 2px solid transparent;
+  border-top: 2px solid transparent;
+}
+
+#game .score-board .timer .number .columns .line-2::before,
+#game .score-board .mines .number .columns .line-2::before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  border-left: 2px solid red;
+  right: -2px;
+  border-bottom: 2px solid transparent;
+  border-top: 2px solid transparent;
+}
+
+#game .score-board .timer .number .columns .show-number,
+#game .score-board .mines .number .columns .show-number {
+  opacity: 1;
+}
+
+#game .score-board .timer .dot,
+#game .score-board .mines .dot {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  opacity: 0.4;
+  -webkit-animation: blink 1s infinite steps(2, jump-none);
+          animation: blink 1s infinite steps(2, jump-none);
+}
+
+#game .score-board .timer .dot::before,
+#game .score-board .mines .dot::before {
+  background-color: red;
+  width: 4px;
+  height: 4px;
+  content: "";
+}
+
+#game .score-board .timer .dot::after,
+#game .score-board .mines .dot::after {
+  background-color: red;
+  width: 4px;
+  height: 4px;
+  content: "";
+}
+
+@-webkit-keyframes blink {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  to {
+    opacity: 1;
+  }
 }
 
 #game .panel {
@@ -270,7 +422,7 @@ body {
   border-bottom: 5px solid #808080;
 }
 
-.fullHeight {
+.full-height {
   min-height: 100%;
 }
 

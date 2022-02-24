@@ -13,6 +13,9 @@ $n-teal: teal;
 $n-black: black;
 $n-gray: gray;
 
+$lineWidth: 4px;
+$lineHeight: 8px;
+
 html,
 body {
   padding: 0;
@@ -25,7 +28,7 @@ body {
   height: 100vh;
 }
 
-.startPanel {
+.start-panel {
   @include centerize;
   @include rectangle(100%, 100%, transparent, 0);
 
@@ -34,7 +37,7 @@ body {
     @include centerize(column, space-evenly);
     @include rectangle(200px, 300px, $silver, 5px);
 
-    #startGame {
+    #start-game {
       @include buttons($silver, 5px, 10px, 1.1em, 3px);
       box-shadow: 0 0 6px 1px $dark-blue;
       outline: none;
@@ -94,7 +97,7 @@ body {
 #game {
   @include centerize;
 
-  .scoreBoard {
+  .score-board {
     @include centerize(row, space-between);
     width: 100%;
     padding: 5px;
@@ -106,8 +109,8 @@ body {
     border-bottom: 5px solid $white;
     margin-bottom: 10px;
 
-    .score {
-      @include rectangle(50px, 30px, $n-black, 0, none);
+    .mines-count {
+      @include rectangle(70px, 30px, $n-black, 0, none);
       border-left: 1px solid $gray;
       border-top: 1px solid $gray;
       border-right: 1px solid $white;
@@ -122,12 +125,87 @@ body {
       border-bottom: 1px solid $white;
     }
 
-    .timer {
-      @include rectangle(50px, 30px, $n-black, 0, none);
+    .timer,
+    .mines {
+      @include rectangle(70px, 30px, $n-black, 0, none);
       border-left: 1px solid $gray;
       border-top: 1px solid $gray;
       border-right: 1px solid $white;
       border-bottom: 1px solid $white;
+      display: inline-grid;
+      gap: 3px;
+      grid-auto-flow: column;
+      justify-content: center;
+
+      .number {
+        width: ($lineWidth * 3) + + $lineHeight;
+        display: grid;
+        grid-template-columns: $lineWidth $lineHeight $lineWidth;
+        grid-auto-flow: column;
+        gap: $lineWidth * 0.5;
+        align-items: center;
+
+        .columns {
+          display: grid;
+          gap: $lineWidth;
+          align-content: space-between;
+
+          &.center-coloumn {
+            height: ($lineHeight * 2) + ($lineWidth * 3);
+          }
+
+          .line-1 {
+            @include line($n-red);
+            &::after {
+              @include triangle($n-red);
+            }
+            &::before {
+              @include triangle($n-red, true, true);
+            }
+          }
+
+          .line-2 {
+            @include line($n-red, false);
+            &::after {
+              @include triangle($n-red, false);
+            }
+            &::before {
+              @include triangle($n-red, false, true);
+            }
+          }
+
+          .show-number {
+            opacity: 1;
+          }
+        }
+      }
+      .dot {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        opacity: 0.4;
+        animation: blink 1s infinite steps(2, jump-none);
+
+        &::before {
+          background-color: $n-red;
+          width: $lineWidth;
+          height: $lineWidth;
+          content: "";
+        }
+        &::after {
+          background-color: $n-red;
+          width: $lineWidth;
+          height: $lineWidth;
+          content: "";
+        }
+      }
+    }
+
+    @keyframes blink {
+      to {
+        opacity: 1;
+      }
     }
   }
 
@@ -141,7 +219,7 @@ body {
   }
 }
 
-.fullHeight {
+.full-height {
   min-height: 100%;
 }
 
