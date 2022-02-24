@@ -1,32 +1,75 @@
 @mixin buttons($color, $pad-tb, $pad-rl, $fz, $radius: 0) {
-    border-radius: $radius;
-    background-color: $color;
-    border: none;
-    padding: $pad-tb $pad-rl;
-    cursor: pointer;
-    font-size: $fz;
+  border-radius: $radius;
+  background-color: $color;
+  border: none;
+  padding: $pad-tb $pad-rl;
+  cursor: pointer;
+  font-size: $fz;
 }
 
 @mixin centerize($direction: row, $space: "") {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: $direction;
-    justify-content: $space;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+  justify-content: $space;
 }
 
 @mixin rectangle($width, $height, $color, $radius, $box-shadow: none) {
-    width: $width;
-    height: $height;
-    background-color: $color;
-    border-radius: $radius;
-    box-shadow: $box-shadow;
+  width: $width;
+  height: $height;
+  background-color: $color;
+  border-radius: $radius;
+  box-shadow: $box-shadow;
 }
 
 @mixin board($cell-count, $gap) {
-    display: inline-grid;
-    grid-template-columns: repeat( $cell-count, 24px);
-    grid-template-rows: auto;
-    gap: $gap;
-    justify-content: center;
+  display: inline-grid;
+  grid-template-columns: repeat($cell-count, 24px);
+  grid-template-rows: auto;
+  gap: $gap;
+  justify-content: center;
+}
+
+@mixin line($color, $vertical: true) {
+  opacity: 0.4; 
+  position: relative;
+  @if $vertical {
+    width: $lineWidth;
+    height: $lineHeight;
+  } @else {
+    width: $lineHeight;
+    height: $lineWidth;
+  }
+  background-color: $color;
+}
+
+@mixin triangle($color, $vertical: true, $turn: false) {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+
+  $halfWidth: ($lineWidth * 0.5);
+  @if $vertical {
+    @if $turn {
+      border-top: $halfWidth solid $color;
+      bottom: -$halfWidth;
+    } @else {
+      border-bottom: $halfWidth solid $color;
+      top: -$halfWidth;
+    }
+    border-left: $halfWidth solid transparent;
+    border-right: $halfWidth solid transparent;
+  } @else {
+    @if $turn {
+      border-left: $halfWidth solid $color;
+      right: -$halfWidth;
+    } @else {
+      border-right: $halfWidth solid $color;
+      left: -$halfWidth;
+    }
+    border-bottom: $halfWidth solid transparent;
+    border-top: $halfWidth solid transparent;
+  }
 }
