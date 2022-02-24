@@ -97,7 +97,7 @@ body {
   .scoreBoard {
     @include centerize(row, space-between);
     width: 100%;
-    padding: 10px;
+    padding: 5px;
     box-sizing: border-box;
     background-color: $silver;
     border-left: 5px solid $gray;
