@@ -18,8 +18,10 @@ class Game {
     ];
     //Get index of the board
     let size = grids[this.difficulty][0] * grids[this.difficulty][1];
+    //Store mines count
+    this.minesCount = grids[this.difficulty][2];
     //Generating mines
-    let mines = this.mineGenerator(size, grids[this.difficulty][2]);
+    let mines = this.mineGenerator(size);
 
     //Craete board and fill it by 0
     this.board = Array.from({ length: grids[this.difficulty][0] }, () =>
@@ -45,11 +47,11 @@ class Game {
   }
 
   //Generating random and unique number for index of the board
-  mineGenerator(size, minesCount) {
+  mineGenerator(size) {
     //By using Set() make it unique
     let mines = new Set();
     //Generate numbers
-    while (mines.size < minesCount) {
+    while (mines.size < this.minesCount) {
       let number = Math.trunc(Math.random() * size);
       mines.add(number);
     }
