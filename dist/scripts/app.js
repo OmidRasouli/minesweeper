@@ -310,11 +310,11 @@ document.querySelector("#difficulty").addEventListener("change", (x) => {
 });
 
 //Add event to button (Start Game)
-document.querySelector("#startGame").addEventListener("click", () => {
-  document.querySelector(".startPanel").style = "display:none";
+document.querySelector("#start-game").addEventListener("click", () => {
+  document.querySelector(".start-panel").style = "display:none";
   let board = document.querySelector(".board");
   board.classList.add(document.querySelector("#difficulty").value);
-  document.querySelector("#game").classList.add("fullHeight");
+  document.querySelector("#game").classList.add("full-height");
   game.startGame(board);
 });
 

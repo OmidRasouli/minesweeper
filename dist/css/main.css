@@ -10,7 +10,7 @@ body {
   height: 100vh;
 }
 
-.startPanel {
+.start-panel {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -35,7 +35,7 @@ body {
           box-shadow: none;
 }
 
-.startPanel .content {
+.start-panel .content {
   background-color: #c6c6c6;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -61,7 +61,7 @@ body {
           box-shadow: none;
 }
 
-.startPanel .content #startGame {
+.start-panel .content #start-game {
   border-radius: 3px;
   background-color: #c6c6c6;
   border: none;
@@ -74,7 +74,7 @@ body {
   border: none;
 }
 
-.startPanel .content #difficulty {
+.start-panel .content #difficulty {
   font-size: 1.1em;
 }
 
@@ -193,7 +193,7 @@ body {
           justify-content: "";
 }
 
-#game .scoreBoard {
+#game .score-board {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -222,8 +222,8 @@ body {
   margin-bottom: 10px;
 }
 
-#game .scoreBoard .score {
-  width: 50px;
+#game .score-board .mines-count {
+  width: 70px;
   height: 30px;
   background-color: black;
   border-radius: 0;
@@ -235,7 +235,7 @@ body {
   border-bottom: 1px solid #ffffff;
 }
 
-#game .scoreBoard .stat {
+#game .score-board .stat {
   width: 30px;
   height: 30px;
   background-color: black;
@@ -248,8 +248,8 @@ body {
   border-bottom: 1px solid #ffffff;
 }
 
-#game .scoreBoard .timer {
-  width: 50px;
+#game .score-board .timer {
+  width: 70px;
   height: 30px;
   background-color: black;
   border-radius: 0;
@@ -408,7 +408,7 @@ body {
   border-bottom: 5px solid #808080;
 }
 
-.fullHeight {
+.full-height {
   min-height: 100%;
 }
 
