@@ -40,6 +40,7 @@ class Game {
     });
     //Generate the cells in the HTML file
     this.generateCells(boardEl);
+    this.timer = new Timer();
     console.log(this.board);
   }
 
