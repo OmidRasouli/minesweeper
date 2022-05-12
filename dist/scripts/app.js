@@ -21,6 +21,8 @@ class Game {
     if (this.board.board[i][j] === "*") {
       console.log("You lose!");
       buttons.get(`${i},${j}`).innerHTML = this.board.board[i][j];
+      //Game over - Lose
+      this.gameState("lose");
       return "*";
     }
     //Is there a mine nearby?
