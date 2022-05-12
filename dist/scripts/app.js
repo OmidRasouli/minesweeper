@@ -12,11 +12,12 @@ class Game {
   startGame(boardEl) {
     this.board = new Board();
     this.board.generateBoard(this.difficulty, boardEl, this);
+    this.gameState("idle");
   }
 
   //Check cell for game state
   checkCell(i, j) {
-    //Is this a mine?
+    if (this.gameIsOver()) return;
     if (this.board.board[i][j] === "*") {
       console.log("You lose!");
       buttons.get(`${i},${j}`).innerHTML = this.board.board[i][j];
@@ -40,11 +41,12 @@ class Game {
     }
   }
 
-  gameOver(stat) {
+  gameState(stat) {
     this.status = stat;
-    if (stat === "win") {
-    } else if (stat === "lose") {
     }
+
+  gameIsOver() {
+    return this.status !== "idle";
   }
 }
 
