@@ -167,11 +167,46 @@ body {
   border-bottom: none;
 }
 
-.board .cell::before {
+.board .cell.mark::before {
   content: "";
   display: block;
-  float: left;
-  padding-top: 100%;
+  width: 2px;
+  height: 2px;
+  background-color: #000;
+  -webkit-box-shadow: 0 2px 0 0 #000, 0 4px 0 0 #000, 0 6px 0 0 #000, 2px 6px 0 0 #000, -2px 6px 0 0 #000, 0 -2px 0 0 #000, 0 -4px 0 0 #000, 0 -6px 0 0 #000, -2px -4px 0 0 #f00, -2px -2px 0 0 #f00, -4px -2px 0 0 #f00;
+          box-shadow: 0 2px 0 0 #000, 0 4px 0 0 #000, 0 6px 0 0 #000, 2px 6px 0 0 #000, -2px 6px 0 0 #000, 0 -2px 0 0 #000, 0 -4px 0 0 #000, 0 -6px 0 0 #000, -2px -4px 0 0 #f00, -2px -2px 0 0 #f00, -4px -2px 0 0 #f00;
+}
+
+.board .cell.n1 {
+  color: blue;
+}
+
+.board .cell.n2 {
+  color: green;
+}
+
+.board .cell.n3 {
+  color: red;
+}
+
+.board .cell.n4 {
+  color: navy;
+}
+
+.board .cell.n5 {
+  color: maroon;
+}
+
+.board .cell.n6 {
+  color: teal;
+}
+
+.board .cell.n7 {
+  color: black;
+}
+
+.board .cell.n8 {
+  color: gray;
 }
 
 #game {
@@ -424,37 +459,5 @@ body {
 
 .full-height {
   min-height: 100%;
-}
-
-.n1 {
-  color: blue;
-}
-
-.n2 {
-  color: green;
-}
-
-.n3 {
-  color: red;
-}
-
-.n4 {
-  color: navy;
-}
-
-.n5 {
-  color: maroon;
-}
-
-.n6 {
-  color: teal;
-}
-
-.n7 {
-  color: black;
-}
-
-.n8 {
-  color: gray;
 }
 /*# sourceMappingURL=main.css.map */

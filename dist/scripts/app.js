@@ -18,9 +18,12 @@ class Game {
   //Check cell for game state
   checkCell(i, j) {
     if (this.gameIsOver()) return;
+
     if (this.board.board[i][j] === "*") {
+      //Is this a mine?
       console.log("You lose!");
       buttons.get(`${i},${j}`).innerHTML = this.board.board[i][j];
+      buttons.get(`${i},${j}`).classList.remove("mark");
       //Game over - Lose
       this.gameState("lose");
       return "*";
@@ -28,6 +31,7 @@ class Game {
     //Is there a mine nearby?
     if (this.board.board[i][j] > 0) {
       console.log("Oops!");
+      buttons.get(`${i},${j}`).classList.remove("mark");
       let btn = buttons.get(`${i},${j}`);
       btn.innerHTML = this.board.board[i][j];
       btn.classList.add(`n${this.board.board[i][j]}`);
@@ -39,13 +43,14 @@ class Game {
       //Check cell and its neighbours
       this.board.freeCells(i, j);
       console.log("Yey!");
+      buttons.get(`${i},${j}`).classList.remove("mark");
       return null;
     }
   }
 
   gameState(stat) {
     this.status = stat;
-    }
+  }
 
   gameIsOver() {
     return this.status !== "idle";

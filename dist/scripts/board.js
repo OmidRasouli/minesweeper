@@ -1,5 +1,33 @@
 class Board {
-  constructor() {}
+  constructor() {
+    this.disableRightClick();
+    this.context = new Map();
+  }
+
+  //Events for right click
+  moreActions(currentCell) {
+    if (game.status != "idle") return;
+    if (this.context.has(currentCell)) {
+      currentCell.classList.remove("mark");
+      this.context.delete(currentCell);
+    } else {
+      this.context.set(currentCell, "mark");
+      currentCell.classList.add("mark");
+    }
+  }
+
+  //Disable right click
+  disableRightClick() {
+    document.addEventListener("contextmenu", (event) => {
+      //Disable right click
+      event.preventDefault();
+
+      let element = event.path[0];
+      //Add event to right click
+      if (element.classList.contains("cell") && !element.disabled)
+        this.moreActions(event.path[0]);
+    });
+  }
 
   //By calling this method game will start
   generateBoard(difficulty, boardEl, game) {
@@ -118,6 +146,8 @@ class Board {
       btn.classList.add(`n${this.board[dim[0]][dim[1]]}`);
       //Make it neutral
       this.board[dim[0]][dim[1]] = "-";
+      //Remove mark class
+      btn.classList.remove("mark");
       return;
     }
 
@@ -126,29 +156,27 @@ class Board {
       //Cell address
       let dim = [row, col];
       //If this is a safe field and make it neutral
-      if (this.board[dim[0]][dim[1]] === 0)
-        this.board[dim[0]][dim[1]] = "-";
+      if (this.board[dim[0]][dim[1]] === 0) this.board[dim[0]][dim[1]] = "-";
       //Get button
       let btn = buttons.get(`${dim[0]},${dim[1]}`);
       //Disable button
       btn.disabled = true;
+      //Remove mark class
+      btn.classList.remove("mark");
     }
 
     //Cell 1
-    if (
-      row - 1 > -1 &&
-      col - 1 > -1 &&
-      !isNaN(this.board[row - 1][col - 1])
-    ) {
+    if (row - 1 > -1 && col - 1 > -1 && !isNaN(this.board[row - 1][col - 1])) {
       //Cell address
       let dim = [row - 1, col - 1];
       //If this is a safe field and make it neutral
-      if (this.board[dim[0]][dim[1]] === 0)
-        this.board[dim[0]][dim[1]] = "-";
+      if (this.board[dim[0]][dim[1]] === 0) this.board[dim[0]][dim[1]] = "-";
       //Get button
       let btn = buttons.get(`${dim[0]},${dim[1]}`);
       //Disable button
       btn.disabled = true;
+      //Remove mark class
+      btn.classList.remove("mark");
       //Check neighbors
       this.freeCells(...dim);
     }
@@ -158,12 +186,13 @@ class Board {
       //Cell address
       let dim = [row - 1, col];
       //If this is a safe field and make it neutral
-      if (this.board[dim[0]][dim[1]] === 0)
-        this.board[dim[0]][dim[1]] = "-";
+      if (this.board[dim[0]][dim[1]] === 0) this.board[dim[0]][dim[1]] = "-";
       //Get button
       let btn = buttons.get(`${dim[0]},${dim[1]}`);
       //Disable button
       btn.disabled = true;
+      //Remove mark class
+      btn.classList.remove("mark");
       //Check neighbors
       this.freeCells(...dim);
     }
@@ -177,12 +206,13 @@ class Board {
       //Cell address
       let dim = [row - 1, col + 1];
       //If this is a safe field and make it neutral
-      if (this.board[dim[0]][dim[1]] === 0)
-        this.board[dim[0]][dim[1]] = "-";
+      if (this.board[dim[0]][dim[1]] === 0) this.board[dim[0]][dim[1]] = "-";
       //Get button
       let btn = buttons.get(`${dim[0]},${dim[1]}`);
       //Disable button
       btn.disabled = true;
+      //Remove mark class
+      btn.classList.remove("mark");
       //Check neighbors
       this.freeCells(...dim);
     }
@@ -192,30 +222,29 @@ class Board {
       //Cell address
       let dim = [row, col - 1];
       //If this is a safe field and make it neutral
-      if (this.board[dim[0]][dim[1]] === 0)
-        this.board[dim[0]][dim[1]] = "-";
+      if (this.board[dim[0]][dim[1]] === 0) this.board[dim[0]][dim[1]] = "-";
       //Get button
       let btn = buttons.get(`${dim[0]},${dim[1]}`);
       //Disable button
       btn.disabled = true;
+      //Remove mark class
+      btn.classList.remove("mark");
       //Check neighbors
       this.freeCells(...dim);
     }
 
     //Cell 6
-    if (
-      col + 1 < this.board[0].length &&
-      !isNaN(this.board[row][col + 1])
-    ) {
+    if (col + 1 < this.board[0].length && !isNaN(this.board[row][col + 1])) {
       //Cell address
       let dim = [row, col + 1];
       //If this is a safe field and make it neutral
-      if (this.board[dim[0]][dim[1]] === 0)
-        this.board[dim[0]][dim[1]] = "-";
+      if (this.board[dim[0]][dim[1]] === 0) this.board[dim[0]][dim[1]] = "-";
       //Get button
       let btn = buttons.get(`${dim[0]},${dim[1]}`);
       //Disable button
       btn.disabled = true;
+      //Remove mark class
+      btn.classList.remove("mark");
       //Check neighbors
       this.freeCells(...dim);
     }
@@ -229,30 +258,29 @@ class Board {
       //Cell address
       let dim = [row + 1, col - 1];
       //If this is a safe field and make it neutral
-      if (this.board[dim[0]][dim[1]] === 0)
-        this.board[dim[0]][dim[1]] = "-";
+      if (this.board[dim[0]][dim[1]] === 0) this.board[dim[0]][dim[1]] = "-";
       //Get button
       let btn = buttons.get(`${dim[0]},${dim[1]}`);
       //Disable button
       btn.disabled = true;
+      //Remove mark class
+      btn.classList.remove("mark");
       //Check neighbors
       this.freeCells(...dim);
     }
 
     //Cell 8
-    if (
-      row + 1 < this.board.length &&
-      !isNaN(this.board[row + 1][col])
-    ) {
+    if (row + 1 < this.board.length && !isNaN(this.board[row + 1][col])) {
       //Cell address
       let dim = [row + 1, col];
       //If this is a safe field and make it neutral
-      if (this.board[dim[0]][dim[1]] === 0)
-        this.board[dim[0]][dim[1]] = "-";
+      if (this.board[dim[0]][dim[1]] === 0) this.board[dim[0]][dim[1]] = "-";
       //Get button
       let btn = buttons.get(`${dim[0]},${dim[1]}`);
       //Disable button
       btn.disabled = true;
+      //Remove mark class
+      btn.classList.remove("mark");
       //Check neighbors
       this.freeCells(...dim);
     }
@@ -266,12 +294,13 @@ class Board {
       //Cell address
       let dim = [row + 1, col + 1];
       //If this is a safe field and make it neutral
-      if (this.board[dim[0]][dim[1]] === 0)
-        this.board[dim[0]][dim[1]] = "-";
+      if (this.board[dim[0]][dim[1]] === 0) this.board[dim[0]][dim[1]] = "-";
       //Get button
       let btn = buttons.get(`${dim[0]},${dim[1]}`);
       //Disable button
       btn.disabled = true;
+      //Remove mark class
+      btn.classList.remove("mark");
       //Check neighbors
       this.freeCells(...dim);
     }
