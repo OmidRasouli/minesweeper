@@ -12,7 +12,7 @@ class DigitalNumber {
     [1, 2, 3, 4, 5, 6, 7], //8
     [1, 3, 4, 5, 6, 7], //9
   ];
-
+  //Show number which passed as parameter
   showNumber(index, lines) {
     this.reset(lines);
     this.numberPatterns[index].forEach((x) =>
