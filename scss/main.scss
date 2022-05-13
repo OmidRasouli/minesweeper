@@ -106,6 +106,29 @@ body {
         -4px -2px 0 0 #f00;
     }
 
+    &.mine {
+      &::before {
+        content: "";
+        display: block;
+        width: 7px;
+        height: 7px;
+        background-color: #000;
+      }
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 0;
+        position: absolute;
+        box-shadow: -1px -1px 0 1px #fff, -5px 0 0 0.5px #000,
+          -6px 0 0 0.5px #000, 5px 0 0 0.5px #000, 6px 0 0 0.5px #000,
+          0 5px 0 0.5px #000, 0 6px 0 0.5px #000, 0 -5px 0 0.5px #000,
+          0 -6px 0 0.5px #000, 0 2.5px 0 2px #000, 0 -2.5px 0 2px #000,
+          2.5px 0 0 2px #000, -2.5px 0 0 2px #000, -4px -4px 0 0.5px #000,
+          4px 4px 0 0.5px #000, 4px -4px 0 0.5px #000, -4px 4px 0 0.5px #000;
+      }
+    }
+
     &.n1 {
       color: $n-blue;
     }
