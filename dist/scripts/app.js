@@ -12,7 +12,18 @@ class Game {
   startGame(boardEl) {
     this.board = new Board();
     this.board.generateBoard(this.difficulty, boardEl, this);
+
     this.stateButton = document.querySelector("#game-stat");
+
+    this.stateButton.addEventListener("click", () => {
+      document.querySelector(".start-panel").removeAttribute("style");
+      let board = document.querySelector(".board");
+      board.classList.add(document.querySelector("#difficulty").value);
+      document.querySelector("#game").classList.remove("full-height");
+      this.board.stopTimer();
+      buttons.clear();
+      game = new Game(0);
+    });
     this.gameState("idle");
   }
 

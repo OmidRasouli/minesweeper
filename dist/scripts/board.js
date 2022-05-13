@@ -64,7 +64,6 @@ class Board {
     //Generate the cells in the HTML file
     this.generateCells(boardEl, game);
     this.timer = new Timer();
-    console.log(this.board);
   }
 
   //Add a number to the cells which are around the mine
@@ -120,6 +119,7 @@ class Board {
 
   //Generate the cells in the HTML file
   generateCells(board, game) {
+    board.innerHTML = "";
     this.board.forEach((c, i) => {
       c.forEach((x, j) => {
         let button = document.createElement("button");
