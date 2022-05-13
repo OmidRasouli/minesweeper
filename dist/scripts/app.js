@@ -22,8 +22,10 @@ class Game {
     if (this.board.board[i][j] === "*") {
       //Is this a mine?
       console.log("You lose!");
-      buttons.get(`${i},${j}`).innerHTML = this.board.board[i][j];
+      //buttons.get(`${i},${j}`).innerHTML = this.board.board[i][j];
       buttons.get(`${i},${j}`).classList.remove("mark");
+      buttons.get(`${i},${j}`).classList.add("mine");
+      buttons.get(`${i},${j}`).disabled = true;
       //Game over - Lose
       this.gameState("lose");
       return "*";
