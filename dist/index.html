@@ -1,156 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/main.css" />
     <title>Minesweeper</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="start-panel">
-        <div class="content">
-            <select id="difficulty">
-                <option value="beginner" selected>Beginner</option>
-                <option value="normal">Normal</option>
-                <option value="hard">Hard</option>
-            </select>
-            <button id="start-game">Start Game</button>
-        </div>
+      <div class="content">
+        <select id="difficulty">
+          <option value="beginner" selected>Beginner</option>
+          <option value="normal">Normal</option>
+          <option value="hard">Hard</option>
+        </select>
+        <button id="start-game">Start Game</button>
+      </div>
     </div>
 
     <div id="game">
-        <div class="panel">
-            <div class="score-board">
-                <div class="mines-count">
-                    <!-- Container of the mines -->
-                    <div class="mines">
-                        <!-- This div contains hundreds of the mines -->
-                        <div id="mines-100" class="number">
-                            <!-- First column - it contains vertical lines of the number (left side) -->
-                            <div class="columns">
-                                <div class="line-1" data-edge="1"></div>
-                                <div class="line-1" data-edge="2"></div>
-                            </div>
-                            <!-- Second column - it contains horizontal lines of the number -->
-                            <div class="columns center-coloumn">
-                                <div class="line-2" data-edge="3"></div>
-                                <div class="line-2" data-edge="4"></div>
-                                <div class="line-2" data-edge="5"></div>
-                            </div>
-                            <!-- Third column - it contains vertical lines of the number (right side) -->
-                            <div class="columns">
-                                <div class="line-1" data-edge="6"></div>
-                                <div class="line-1" data-edge="7"></div>
-                            </div>
-                        </div>
-                        <!-- This div contains tens of the mines -->
-                        <div id="mines-10" class="number">
-                            <!-- First column - it contains vertical lines of the number (left side) -->
-                            <div class="columns">
-                                <div class="line-1" data-edge="1"></div>
-                                <div class="line-1" data-edge="2"></div>
-                            </div>
-                            <!-- Second column - it contains horizontal lines of the number -->
-                            <div class="columns center-coloumn">
-                                <div class="line-2" data-edge="3"></div>
-                                <div class="line-2" data-edge="4"></div>
-                                <div class="line-2" data-edge="5"></div>
-                            </div>
-                            <!-- Third column - it contains vertical lines of the number (right side) -->
-                            <div class="columns">
-                                <div class="line-1" data-edge="6"></div>
-                                <div class="line-1" data-edge="7"></div>
-                            </div>
-                        </div>
-                        <!-- This div contains ones of the mines -->
-                        <div id="mines-1" class="number">
-                            <!-- First column - it contains vertical lines of the number (left side) -->
-                            <div class="columns">
-                                <div class="line-1" data-edge="1"></div>
-                                <div class="line-1" data-edge="2"></div>
-                            </div>
-                            <!-- Second column - it contains horizontal lines of the number -->
-                            <div class="columns center-coloumn">
-                                <div class="line-2" data-edge="3"></div>
-                                <div class="line-2" data-edge="4"></div>
-                                <div class="line-2" data-edge="5"></div>
-                            </div>
-                            <!-- Third column - it contains vertical lines of the number (right side) -->
-                            <div class="columns">
-                                <div class="line-1" data-edge="6"></div>
-                                <div class="line-1" data-edge="7"></div>
-                            </div>
-                        </div>
-                    </div>
+      <div class="panel">
+        <div class="score-board">
+          <div class="mines-count">
+            <!-- Container of the mines -->
+            <div class="mines">
+              <!-- This div contains hundreds of the mines -->
+              <div id="mines-100" class="number">
+                <!-- First column - it contains vertical lines of the number (left side) -->
+                <div class="columns">
+                  <div class="line-1" data-edge="1"></div>
+                  <div class="line-1" data-edge="2"></div>
                 </div>
-                <div class="stat"></div>
-                <!-- Container of the timer -->
-                <div class="timer">
-                    <!-- This div contains hundreds of the seconds -->
-                    <div id="seconds-100" class="number">
-                        <!-- First column - it contains vertical lines of the number (left side) -->
-                        <div class="columns">
-                            <div class="line-1" data-edge="1"></div>
-                            <div class="line-1" data-edge="2"></div>
-                        </div>
-                        <!-- Second column - it contains horizontal lines of the number -->
-                        <div class="columns center-coloumn">
-                            <div class="line-2" data-edge="3"></div>
-                            <div class="line-2" data-edge="4"></div>
-                            <div class="line-2" data-edge="5"></div>
-                        </div>
-                        <!-- Third column - it contains vertical lines of the number (right side) -->
-                        <div class="columns">
-                            <div class="line-1" data-edge="6"></div>
-                            <div class="line-1" data-edge="7"></div>
-                        </div>
-                    </div>
-                    <!-- This div contains tens of the seconds -->
-                    <div id="seconds-10" class="number">
-                        <!-- First column - it contains vertical lines of the number (left side) -->
-                        <div class="columns">
-                            <div class="line-1" data-edge="1"></div>
-                            <div class="line-1" data-edge="2"></div>
-                        </div>
-                        <!-- Second column - it contains horizontal lines of the number -->
-                        <div class="columns center-coloumn">
-                            <div class="line-2" data-edge="3"></div>
-                            <div class="line-2" data-edge="4"></div>
-                            <div class="line-2" data-edge="5"></div>
-                        </div>
-                        <!-- Third column - it contains vertical lines of the number (right side) -->
-                        <div class="columns">
-                            <div class="line-1" data-edge="6"></div>
-                            <div class="line-1" data-edge="7"></div>
-                        </div>
-                    </div>
-                    <!-- This div contains ones of the seconds -->
-                    <div id="seconds-1" class="number">
-                        <!-- First column - it contains vertical lines of the number (left side) -->
-                        <div class="columns">
-                            <div class="line-1" data-edge="1"></div>
-                            <div class="line-1" data-edge="2"></div>
-                        </div>
-                        <!-- Second column - it contains horizontal lines of the number -->
-                        <div class="columns center-coloumn">
-                            <div class="line-2" data-edge="3"></div>
-                            <div class="line-2" data-edge="4"></div>
-                            <div class="line-2" data-edge="5"></div>
-                        </div>
-                        <!-- Third column - it contains vertical lines of the number (right side) -->
-                        <div class="columns">
-                            <div class="line-1" data-edge="6"></div>
-                            <div class="line-1" data-edge="7"></div>
-                        </div>
-                    </div>
+                <!-- Second column - it contains horizontal lines of the number -->
+                <div class="columns center-coloumn">
+                  <div class="line-2" data-edge="3"></div>
+                  <div class="line-2" data-edge="4"></div>
+                  <div class="line-2" data-edge="5"></div>
                 </div>
+                <!-- Third column - it contains vertical lines of the number (right side) -->
+                <div class="columns">
+                  <div class="line-1" data-edge="6"></div>
+                  <div class="line-1" data-edge="7"></div>
+                </div>
+              </div>
+              <!-- This div contains tens of the mines -->
+              <div id="mines-10" class="number">
+                <!-- First column - it contains vertical lines of the number (left side) -->
+                <div class="columns">
+                  <div class="line-1" data-edge="1"></div>
+                  <div class="line-1" data-edge="2"></div>
+                </div>
+                <!-- Second column - it contains horizontal lines of the number -->
+                <div class="columns center-coloumn">
+                  <div class="line-2" data-edge="3"></div>
+                  <div class="line-2" data-edge="4"></div>
+                  <div class="line-2" data-edge="5"></div>
+                </div>
+                <!-- Third column - it contains vertical lines of the number (right side) -->
+                <div class="columns">
+                  <div class="line-1" data-edge="6"></div>
+                  <div class="line-1" data-edge="7"></div>
+                </div>
+              </div>
+              <!-- This div contains ones of the mines -->
+              <div id="mines-1" class="number">
+                <!-- First column - it contains vertical lines of the number (left side) -->
+                <div class="columns">
+                  <div class="line-1" data-edge="1"></div>
+                  <div class="line-1" data-edge="2"></div>
+                </div>
+                <!-- Second column - it contains horizontal lines of the number -->
+                <div class="columns center-coloumn">
+                  <div class="line-2" data-edge="3"></div>
+                  <div class="line-2" data-edge="4"></div>
+                  <div class="line-2" data-edge="5"></div>
+                </div>
+                <!-- Third column - it contains vertical lines of the number (right side) -->
+                <div class="columns">
+                  <div class="line-1" data-edge="6"></div>
+                  <div class="line-1" data-edge="7"></div>
+                </div>
+              </div>
             </div>
-            <div class="board">
+          </div>
+          <div class="stat">
+            <button id="game-stat"></button>
+          </div>
+          <!-- Container of the timer -->
+          <div class="timer">
+            <!-- This div contains hundreds of the seconds -->
+            <div id="seconds-100" class="number">
+              <!-- First column - it contains vertical lines of the number (left side) -->
+              <div class="columns">
+                <div class="line-1" data-edge="1"></div>
+                <div class="line-1" data-edge="2"></div>
+              </div>
+              <!-- Second column - it contains horizontal lines of the number -->
+              <div class="columns center-coloumn">
+                <div class="line-2" data-edge="3"></div>
+                <div class="line-2" data-edge="4"></div>
+                <div class="line-2" data-edge="5"></div>
+              </div>
+              <!-- Third column - it contains vertical lines of the number (right side) -->
+              <div class="columns">
+                <div class="line-1" data-edge="6"></div>
+                <div class="line-1" data-edge="7"></div>
+              </div>
             </div>
+            <!-- This div contains tens of the seconds -->
+            <div id="seconds-10" class="number">
+              <!-- First column - it contains vertical lines of the number (left side) -->
+              <div class="columns">
+                <div class="line-1" data-edge="1"></div>
+                <div class="line-1" data-edge="2"></div>
+              </div>
+              <!-- Second column - it contains horizontal lines of the number -->
+              <div class="columns center-coloumn">
+                <div class="line-2" data-edge="3"></div>
+                <div class="line-2" data-edge="4"></div>
+                <div class="line-2" data-edge="5"></div>
+              </div>
+              <!-- Third column - it contains vertical lines of the number (right side) -->
+              <div class="columns">
+                <div class="line-1" data-edge="6"></div>
+                <div class="line-1" data-edge="7"></div>
+              </div>
+            </div>
+            <!-- This div contains ones of the seconds -->
+            <div id="seconds-1" class="number">
+              <!-- First column - it contains vertical lines of the number (left side) -->
+              <div class="columns">
+                <div class="line-1" data-edge="1"></div>
+                <div class="line-1" data-edge="2"></div>
+              </div>
+              <!-- Second column - it contains horizontal lines of the number -->
+              <div class="columns center-coloumn">
+                <div class="line-2" data-edge="3"></div>
+                <div class="line-2" data-edge="4"></div>
+                <div class="line-2" data-edge="5"></div>
+              </div>
+              <!-- Third column - it contains vertical lines of the number (right side) -->
+              <div class="columns">
+                <div class="line-1" data-edge="6"></div>
+                <div class="line-1" data-edge="7"></div>
+              </div>
+            </div>
+          </div>
         </div>
+        <div class="board"></div>
+      </div>
     </div>
 
     <script src="./scripts/board.js" defer></script>
@@ -158,6 +158,5 @@
     <script src="./scripts/mine.js" defer></script>
     <script src="./scripts/timer.js" defer></script>
     <script src="./scripts/app.js" defer></script>
-</body>
-
+  </body>
 </html>
