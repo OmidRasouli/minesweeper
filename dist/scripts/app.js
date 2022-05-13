@@ -22,7 +22,8 @@ class Game {
       document.querySelector("#game").classList.remove("full-height");
       this.board.stopTimer();
       buttons.clear();
-      game = new Game(0);
+      let difficulty = game.difficulty;
+      game = new Game(difficulty);
     });
     this.gameState("idle");
   }
