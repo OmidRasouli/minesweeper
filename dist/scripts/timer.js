@@ -11,10 +11,17 @@ class Timer {
     this.lines.push(document.querySelectorAll("#seconds-1 div[data-edge]"));
 
     this.digitalNumber = new DigitalNumber();
+    this.gameStopped = false;
 
     this.time = 0;
 
     this.countDown();
+  }
+
+  //Stop the game
+  stopTimer() {
+    clearTimeout(this.timeout);
+    this.gameStopped = true;
   }
 
   //Timer function (this is obvious :D)
@@ -40,7 +47,7 @@ class Timer {
 
     let self = this;
     //Call this function after 1s
-    setTimeout(function () {
+    this.timeout = setTimeout(function () {
       self.countDown(++self.time);
     }, 1000);
   }

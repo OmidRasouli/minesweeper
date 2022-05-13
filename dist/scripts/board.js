@@ -130,6 +130,11 @@ class Board {
     });
   }
 
+  //Stop the timer
+  stopTimer() {
+    this.timer.stopTimer();
+  }
+
   //Free empty cells
   freeCells(row, col) {
     //This isn't a mine or safe field

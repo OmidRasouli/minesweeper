@@ -55,8 +55,12 @@ class Game {
     this.status = stat;
     if (this.status === "win") {
       this.stateButton.classList.add("sunglass");
+      this.board.stopTimer();
     } else if (this.status === "lose") {
       this.stateButton.classList.add("sad");
+      this.board.stopTimer();
+    } else if (this.status === "idle") {
+      this.stateButton.classList.remove("sad", "sunglass");
     }
   }
 
