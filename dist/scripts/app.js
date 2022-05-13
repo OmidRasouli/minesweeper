@@ -12,6 +12,7 @@ class Game {
   startGame(boardEl) {
     this.board = new Board();
     this.board.generateBoard(this.difficulty, boardEl, this);
+    this.stateButton = document.querySelector("#game-stat");
     this.gameState("idle");
   }
 
@@ -52,6 +53,11 @@ class Game {
 
   gameState(stat) {
     this.status = stat;
+    if (this.status === "win") {
+      this.stateButton.classList.add("sunglass");
+    } else if (this.status === "lose") {
+      this.stateButton.classList.add("sad");
+    }
   }
 
   gameIsOver() {
