@@ -12,13 +12,34 @@ class Game {
   startGame(boardEl) {
     this.board = new Board();
     this.board.generateBoard(this.difficulty, boardEl, this);
+
     this.stateButton = document.querySelector("#game-stat");
+
+    this.stateButton.addEventListener("click", () => {
+      document.querySelector(".start-panel").removeAttribute("style");
+      let board = document.querySelector(".board");
+      board.classList.add(document.querySelector("#difficulty").value);
+      document.querySelector("#game").classList.remove("full-height");
+      this.board.stopTimer();
+      buttons.clear();
+      let difficulty = game.difficulty;
+      game = new Game(difficulty);
+    });
     this.gameState("idle");
+  }
+
+  //Check if the game i's finished
+  checkGame(correctAnswers, minesCount, boardSize) {
+    if (correctAnswers === boardSize - minesCount) this.gameState("win");
   }
 
   //Check cell for game state
   checkCell(i, j) {
     if (this.gameIsOver()) return;
+
+    if (buttons.get(`${i},${j}`).classList.contains("mark")) {
+      return;
+    }
 
     if (this.board.board[i][j] === "*") {
       //Is this a mine?
@@ -39,6 +60,8 @@ class Game {
       btn.innerHTML = this.board.board[i][j];
       btn.classList.add(`n${this.board.board[i][j]}`);
       btn.disabled = true;
+      this.board.board[i][j] = "-";
+      this.board.checkBoard();
       return this.board.board[i][j];
     }
     //Wow safe field
@@ -55,8 +78,12 @@ class Game {
     this.status = stat;
     if (this.status === "win") {
       this.stateButton.classList.add("sunglass");
+      this.board.stopTimer();
     } else if (this.status === "lose") {
       this.stateButton.classList.add("sad");
+      this.board.stopTimer();
+    } else if (this.status === "idle") {
+      this.stateButton.classList.remove("sad", "sunglass");
     }
   }
 
