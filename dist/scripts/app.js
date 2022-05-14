@@ -28,9 +28,18 @@ class Game {
     this.gameState("idle");
   }
 
+  //Check if the game i's finished
+  checkGame(correctAnswers, minesCount, boardSize) {
+    if (correctAnswers === boardSize - minesCount) this.gameState("win");
+  }
+
   //Check cell for game state
   checkCell(i, j) {
     if (this.gameIsOver()) return;
+
+    if (buttons.get(`${i},${j}`).classList.contains("mark")) {
+      return;
+    }
 
     if (this.board.board[i][j] === "*") {
       //Is this a mine?
@@ -51,6 +60,8 @@ class Game {
       btn.innerHTML = this.board.board[i][j];
       btn.classList.add(`n${this.board.board[i][j]}`);
       btn.disabled = true;
+      this.board.board[i][j] = "-";
+      this.board.checkBoard();
       return this.board.board[i][j];
     }
     //Wow safe field

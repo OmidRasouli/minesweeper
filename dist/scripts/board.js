@@ -7,12 +7,15 @@ class Board {
   //Events for right click
   moreActions(currentCell) {
     if (game.status != "idle") return;
+
     if (this.context.has(currentCell)) {
       currentCell.classList.remove("mark");
       this.context.delete(currentCell);
-    } else {
+      this.mines.removeGuess();
+    } else if (this.mines.checkGuess()) {
       this.context.set(currentCell, "mark");
       currentCell.classList.add("mark");
+      this.mines.addGuess();
     }
   }
 
@@ -39,10 +42,12 @@ class Board {
     ];
     //Get index of the board
     let size = grids[difficulty][0] * grids[difficulty][1];
+    this.size = size;
     //Store mines count
     this.minesCount = grids[difficulty][2];
     //Generating mines
-    let mines = new Mine().mineGenerator(size, this.minesCount);
+    this.mines = new Mine();
+    let mineList = this.mines.mineGenerator(size, this.minesCount);
 
     //Craete board and fill it by 0
     this.board = Array.from({ length: grids[difficulty][0] }, () =>
@@ -50,7 +55,7 @@ class Board {
     );
 
     //Fill the board by mines
-    mines.forEach((index) => {
+    mineList.forEach((index) => {
       //Calc row and col by using index
       let row = Math.trunc(index / grids[difficulty][1]);
       let col = index - row * grids[difficulty][1];
@@ -64,6 +69,7 @@ class Board {
     //Generate the cells in the HTML file
     this.generateCells(boardEl, game);
     this.timer = new Timer();
+    console.log(this.board);
   }
 
   //Add a number to the cells which are around the mine
@@ -152,7 +158,7 @@ class Board {
       //Make it neutral
       this.board[dim[0]][dim[1]] = "-";
       //Remove mark class
-      btn.classList.remove("mark");
+      this.removeMark(btn);
       return;
     }
 
@@ -167,7 +173,7 @@ class Board {
       //Disable button
       btn.disabled = true;
       //Remove mark class
-      btn.classList.remove("mark");
+      this.removeMark(btn);
     }
 
     //Cell 1
@@ -181,7 +187,7 @@ class Board {
       //Disable button
       btn.disabled = true;
       //Remove mark class
-      btn.classList.remove("mark");
+      this.removeMark(btn);
       //Check neighbors
       this.freeCells(...dim);
     }
@@ -197,7 +203,7 @@ class Board {
       //Disable button
       btn.disabled = true;
       //Remove mark class
-      btn.classList.remove("mark");
+      this.removeMark(btn);
       //Check neighbors
       this.freeCells(...dim);
     }
@@ -217,7 +223,7 @@ class Board {
       //Disable button
       btn.disabled = true;
       //Remove mark class
-      btn.classList.remove("mark");
+      this.removeMark(btn);
       //Check neighbors
       this.freeCells(...dim);
     }
@@ -233,7 +239,7 @@ class Board {
       //Disable button
       btn.disabled = true;
       //Remove mark class
-      btn.classList.remove("mark");
+      this.removeMark(btn);
       //Check neighbors
       this.freeCells(...dim);
     }
@@ -249,7 +255,7 @@ class Board {
       //Disable button
       btn.disabled = true;
       //Remove mark class
-      btn.classList.remove("mark");
+      this.removeMark(btn);
       //Check neighbors
       this.freeCells(...dim);
     }
@@ -269,7 +275,7 @@ class Board {
       //Disable button
       btn.disabled = true;
       //Remove mark class
-      btn.classList.remove("mark");
+      this.removeMark(btn);
       //Check neighbors
       this.freeCells(...dim);
     }
@@ -285,7 +291,7 @@ class Board {
       //Disable button
       btn.disabled = true;
       //Remove mark class
-      btn.classList.remove("mark");
+      this.removeMark(btn);
       //Check neighbors
       this.freeCells(...dim);
     }
@@ -305,9 +311,27 @@ class Board {
       //Disable button
       btn.disabled = true;
       //Remove mark class
-      btn.classList.remove("mark");
+      this.removeMark(btn);
       //Check neighbors
       this.freeCells(...dim);
     }
+    this.checkBoard();
+  }
+
+  checkBoard() {
+    let correctAnswers = this.board.map((element) =>
+      parseInt(element.filter((x) => x === "-").length)
+    );
+
+    let correctAnswersCount = correctAnswers.reduce((x, y) => x + y);
+    console.log(correctAnswersCount);
+    game.checkGame(correctAnswersCount, this.mines.count, this.size);
+  }
+
+  removeMark(button) {
+    if (!button.classList.contains("mark")) return;
+
+    button.classList.remove("mark");
+    this.mines.removeGuess();
   }
 }
