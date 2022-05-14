@@ -19,7 +19,9 @@ class Game {
       document.querySelector(".start-panel").removeAttribute("style");
       let board = document.querySelector(".board");
       board.classList.add(document.querySelector("#difficulty").value);
-      document.querySelector("#game").classList.remove("full-height");
+      let gameBoard = document.querySelector("#game");
+      gameBoard.classList.remove("full-height");
+      gameBoard.classList.add("hidden");
       this.board.stopTimer();
       buttons.clear();
       let difficulty = game.difficulty;
@@ -105,9 +107,13 @@ document.querySelector("#start-game").addEventListener("click", () => {
   document.querySelector(".start-panel").style = "display:none";
   let board = document.querySelector(".board");
   board.classList.add(document.querySelector("#difficulty").value);
-  document.querySelector("#game").classList.add("full-height");
+  let gameBoard = document.querySelector("#game");
+  gameBoard.classList.add("full-height");
+  gameBoard.classList.remove("hidden");
   game.startGame(board);
 });
 
 //Need to exec once
-(function () {})();
+(function () {
+  document.querySelector("#game").classList.add("hidden");
+})();
