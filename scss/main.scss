@@ -159,6 +159,10 @@ body {
 #game {
   @include centerize;
 
+  &.hidden {
+    display: none;
+  }
+
   .score-board {
     @include centerize(row, space-between);
     width: 100%;

@@ -246,6 +246,10 @@ body {
           justify-content: "";
 }
 
+#game.hidden {
+  display: none;
+}
+
 #game .score-board {
   display: -webkit-box;
   display: -ms-flexbox;
