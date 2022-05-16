@@ -56,26 +56,45 @@ body {
   width: 200px;
   height: 300px;
   background-color: #c6c6c6;
-  border-radius: 5px;
+  border-radius: 0;
   -webkit-box-shadow: none;
           box-shadow: none;
+  border-left: 5px solid #ffffff;
+  border-top: 5px solid #ffffff;
+  border-right: 5px solid #808080;
+  border-bottom: 5px solid #808080;
 }
 
-.start-panel .content #start-game {
-  border-radius: 3px;
+.start-panel .content .start-button {
+  border-radius: 0;
   background-color: #c6c6c6;
   border: none;
-  padding: 5px 10px;
+  padding: 5px 5px;
   cursor: pointer;
   font-size: 1.1em;
-  -webkit-box-shadow: 0 0 6px 1px #010333;
-          box-shadow: 0 0 6px 1px #010333;
-  outline: none;
-  border: none;
+  border-left: 3px solid #ffffff;
+  border-top: 3px solid #ffffff;
+  border-right: 3px solid #808080;
+  border-bottom: 3px solid #808080;
+  width: 40%;
+  height: 30px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
 }
 
-.start-panel .content #difficulty {
-  font-size: 1.1em;
+.start-panel .content #emoji {
+  width: 50px;
+  height: 50px;
+  border-left: 3px solid #808080;
+  border-top: 3px solid #808080;
+  border-right: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  background-color: #bcbcbc;
+}
+
+.start-panel .content #emoji:active::after, .start-panel .content #emoji:hover::after {
+  -webkit-box-shadow: -3px -3px 0 1px #f00, -4.5px -3px 0 1px #f00, 3px -3px 0 1px #f00, 4.5px -3px 0 1px #f00, 3px -4.5px 0 0.5px #f00, -3px -4.5px 0 0.5px #f00, 4.5px -4.5px 0 0.5px #f00, -4.5px -4.5px 0 0.5px #f00, 3.8px -2.5px 0 1px #f00, -3.8px -2.5px 0 1px #f00, 3.8px -1.5px 0 0.5px #f00, -3.7px -1.5px 0 0.5px #f00, 0px 5px 0 0.5px #000, 1px 5px 0 0.5px #000, -1px 5px 0 0.5px #000, -2px 5px 0 0.5px #000, 2px 5px 0 0.5px #000, 3px 4px 0 0.5px #000, -3px 4px 0 0.5px #000, -4px 3px 0 0.5px #000, 4px 3px 0 0.5px #000, 10px 0px 0 0.5px #000, 10px 1px 0 0.5px #000, 10px -1px 0 0.5px #000, 10px 2px 0 0.5px #000, 10px -2px 0 0.5px #000, 10px -3px 0 0.5px #000, 10px 3px 0 0.5px #000, 9px -4px 0 0.5px #000, 9px 4px 0 0.5px #000, 9px -5px 0 0.5px #000, 9px 5px 0 0.5px #000, 8px -6px 0 0.5px #000, 8px 6px 0 0.5px #000, 7px -7px 0 0.5px #000, 7px 7px 0 0.5px #000, 6px -8px 0 0.5px #000, 6px 8px 0 0.5px #000, 5px -9px 0 0.5px #000, 5px 9px 0 0.5px #000, 4px -9px 0 0.5px #000, 4px 9px 0 0.5px #000, 3px -10px 0 0.5px #000, 3px 10px 0 0.5px #000, 2px 10px 0 0.5px #000, 1px 10px 0 0.5px #000, 0px 10px 0 0.5px #000, 2px -10px 0 0.5px #000, 1px -10px 0 0.5px #000, -10px 0px 0 0.5px #000, -10px 1px 0 0.5px #000, -10px -1px 0 0.5px #000, -10px 2px 0 0.5px #000, -10px -2px 0 0.5px #000, -10px -3px 0 0.5px #000, -10px 3px 0 0.5px #000, -9px -4px 0 0.5px #000, -9px 4px 0 0.5px #000, -9px -5px 0 0.5px #000, -9px 5px 0 0.5px #000, -8px -6px 0 0.5px #000, -8px 6px 0 0.5px #000, -7px -7px 0 0.5px #000, -7px 7px 0 0.5px #000, -6px -8px 0 0.5px #000, -6px 8px 0 0.5px #000, -5px -9px 0 0.5px #000, -5px 9px 0 0.5px #000, -4px -9px 0 0.5px #000, -4px 9px 0 0.5px #000, -3px -10px 0 0.5px #000, -3px 10px 0 0.5px #000, -2px 10px 0 0.5px #000, -1px 10px 0 0.5px #000, -2px -10px 0 0.5px #000, -1px -10px 0 0.5px #000, 0px -10px 0 0.5px #000;
+          box-shadow: -3px -3px 0 1px #f00, -4.5px -3px 0 1px #f00, 3px -3px 0 1px #f00, 4.5px -3px 0 1px #f00, 3px -4.5px 0 0.5px #f00, -3px -4.5px 0 0.5px #f00, 4.5px -4.5px 0 0.5px #f00, -4.5px -4.5px 0 0.5px #f00, 3.8px -2.5px 0 1px #f00, -3.8px -2.5px 0 1px #f00, 3.8px -1.5px 0 0.5px #f00, -3.7px -1.5px 0 0.5px #f00, 0px 5px 0 0.5px #000, 1px 5px 0 0.5px #000, -1px 5px 0 0.5px #000, -2px 5px 0 0.5px #000, 2px 5px 0 0.5px #000, 3px 4px 0 0.5px #000, -3px 4px 0 0.5px #000, -4px 3px 0 0.5px #000, 4px 3px 0 0.5px #000, 10px 0px 0 0.5px #000, 10px 1px 0 0.5px #000, 10px -1px 0 0.5px #000, 10px 2px 0 0.5px #000, 10px -2px 0 0.5px #000, 10px -3px 0 0.5px #000, 10px 3px 0 0.5px #000, 9px -4px 0 0.5px #000, 9px 4px 0 0.5px #000, 9px -5px 0 0.5px #000, 9px 5px 0 0.5px #000, 8px -6px 0 0.5px #000, 8px 6px 0 0.5px #000, 7px -7px 0 0.5px #000, 7px 7px 0 0.5px #000, 6px -8px 0 0.5px #000, 6px 8px 0 0.5px #000, 5px -9px 0 0.5px #000, 5px 9px 0 0.5px #000, 4px -9px 0 0.5px #000, 4px 9px 0 0.5px #000, 3px -10px 0 0.5px #000, 3px 10px 0 0.5px #000, 2px 10px 0 0.5px #000, 1px 10px 0 0.5px #000, 0px 10px 0 0.5px #000, 2px -10px 0 0.5px #000, 1px -10px 0 0.5px #000, -10px 0px 0 0.5px #000, -10px 1px 0 0.5px #000, -10px -1px 0 0.5px #000, -10px 2px 0 0.5px #000, -10px -2px 0 0.5px #000, -10px -3px 0 0.5px #000, -10px 3px 0 0.5px #000, -9px -4px 0 0.5px #000, -9px 4px 0 0.5px #000, -9px -5px 0 0.5px #000, -9px 5px 0 0.5px #000, -8px -6px 0 0.5px #000, -8px 6px 0 0.5px #000, -7px -7px 0 0.5px #000, -7px 7px 0 0.5px #000, -6px -8px 0 0.5px #000, -6px 8px 0 0.5px #000, -5px -9px 0 0.5px #000, -5px 9px 0 0.5px #000, -4px -9px 0 0.5px #000, -4px 9px 0 0.5px #000, -3px -10px 0 0.5px #000, -3px 10px 0 0.5px #000, -2px 10px 0 0.5px #000, -1px 10px 0 0.5px #000, -2px -10px 0 0.5px #000, -1px -10px 0 0.5px #000, 0px -10px 0 0.5px #000;
 }
 
 .board {
@@ -86,7 +105,7 @@ body {
   border-bottom: 5px solid #ffffff;
 }
 
-.board.beginner {
+.board.difficulty-0 {
   display: -ms-inline-grid;
   display: inline-grid;
   -ms-grid-columns: (24px)[9];
@@ -99,7 +118,7 @@ body {
           justify-content: center;
 }
 
-.board.normal {
+.board.difficulty-1 {
   display: -ms-inline-grid;
   display: inline-grid;
   -ms-grid-columns: (24px)[16];
@@ -112,7 +131,7 @@ body {
           justify-content: center;
 }
 
-.board.hard {
+.board.difficulty-2 {
   display: -ms-inline-grid;
   display: inline-grid;
   -ms-grid-columns: (24px)[16];
@@ -305,80 +324,6 @@ body {
   border-bottom: 1px solid #ffffff;
 }
 
-#game .score-board .stat #game-stat {
-  width: 98%;
-  height: 98%;
-  background-color: #c6c6c6;
-  border-radius: 0;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: "";
-      -ms-flex-pack: "";
-          justify-content: "";
-  text-align: center;
-  border-left: 3px solid #ffffff;
-  border-top: 3px solid #ffffff;
-  border-right: 3px solid #808080;
-  border-bottom: 3px solid #808080;
-  padding: 0;
-  margin: 0;
-}
-
-#game .score-board .stat #game-stat:active {
-  border-left: 3px solid #808080;
-  border-top: 3px solid #808080;
-  border-right: 3px solid #ffffff;
-  border-bottom: 3px solid #ffffff;
-  background-color: #bcbcbc;
-}
-
-#game .score-board .stat #game-stat:active::after, #game .score-board .stat #game-stat:active::before {
-  margin-top: 1px;
-  background-color: #eaee08;
-}
-
-#game .score-board .stat #game-stat::before {
-  width: 20px;
-  height: 20px;
-  display: block;
-  content: "";
-  background-color: #fbff08;
-  border-radius: 50%;
-}
-
-#game .score-board .stat #game-stat::after {
-  width: 0;
-  height: 0;
-  display: block;
-  content: "";
-  position: absolute;
-  -webkit-box-shadow: -3px -3px 0 1px #000, 3px -3px 0 1px #000, 0px 5px 0 0.5px #000, 1px 5px 0 0.5px #000, -1px 5px 0 0.5px #000, -2px 5px 0 0.5px #000, 2px 5px 0 0.5px #000, 3px 4px 0 0.5px #000, -3px 4px 0 0.5px #000, -4px 3px 0 0.5px #000, 4px 3px 0 0.5px #000, 10px 0px 0 0.5px #000, 10px 1px 0 0.5px #000, 10px -1px 0 0.5px #000, 10px 2px 0 0.5px #000, 10px -2px 0 0.5px #000, 10px -3px 0 0.5px #000, 10px 3px 0 0.5px #000, 9px -4px 0 0.5px #000, 9px 4px 0 0.5px #000, 9px -5px 0 0.5px #000, 9px 5px 0 0.5px #000, 8px -6px 0 0.5px #000, 8px 6px 0 0.5px #000, 7px -7px 0 0.5px #000, 7px 7px 0 0.5px #000, 6px -8px 0 0.5px #000, 6px 8px 0 0.5px #000, 5px -9px 0 0.5px #000, 5px 9px 0 0.5px #000, 4px -9px 0 0.5px #000, 4px 9px 0 0.5px #000, 3px -10px 0 0.5px #000, 3px 10px 0 0.5px #000, 2px 10px 0 0.5px #000, 1px 10px 0 0.5px #000, 0px 10px 0 0.5px #000, 2px -10px 0 0.5px #000, 1px -10px 0 0.5px #000, -10px 0px 0 0.5px #000, -10px 1px 0 0.5px #000, -10px -1px 0 0.5px #000, -10px 2px 0 0.5px #000, -10px -2px 0 0.5px #000, -10px -3px 0 0.5px #000, -10px 3px 0 0.5px #000, -9px -4px 0 0.5px #000, -9px 4px 0 0.5px #000, -9px -5px 0 0.5px #000, -9px 5px 0 0.5px #000, -8px -6px 0 0.5px #000, -8px 6px 0 0.5px #000, -7px -7px 0 0.5px #000, -7px 7px 0 0.5px #000, -6px -8px 0 0.5px #000, -6px 8px 0 0.5px #000, -5px -9px 0 0.5px #000, -5px 9px 0 0.5px #000, -4px -9px 0 0.5px #000, -4px 9px 0 0.5px #000, -3px -10px 0 0.5px #000, -3px 10px 0 0.5px #000, -2px 10px 0 0.5px #000, -1px 10px 0 0.5px #000, -2px -10px 0 0.5px #000, -1px -10px 0 0.5px #000, 0px -10px 0 0.5px #000;
-          box-shadow: -3px -3px 0 1px #000, 3px -3px 0 1px #000, 0px 5px 0 0.5px #000, 1px 5px 0 0.5px #000, -1px 5px 0 0.5px #000, -2px 5px 0 0.5px #000, 2px 5px 0 0.5px #000, 3px 4px 0 0.5px #000, -3px 4px 0 0.5px #000, -4px 3px 0 0.5px #000, 4px 3px 0 0.5px #000, 10px 0px 0 0.5px #000, 10px 1px 0 0.5px #000, 10px -1px 0 0.5px #000, 10px 2px 0 0.5px #000, 10px -2px 0 0.5px #000, 10px -3px 0 0.5px #000, 10px 3px 0 0.5px #000, 9px -4px 0 0.5px #000, 9px 4px 0 0.5px #000, 9px -5px 0 0.5px #000, 9px 5px 0 0.5px #000, 8px -6px 0 0.5px #000, 8px 6px 0 0.5px #000, 7px -7px 0 0.5px #000, 7px 7px 0 0.5px #000, 6px -8px 0 0.5px #000, 6px 8px 0 0.5px #000, 5px -9px 0 0.5px #000, 5px 9px 0 0.5px #000, 4px -9px 0 0.5px #000, 4px 9px 0 0.5px #000, 3px -10px 0 0.5px #000, 3px 10px 0 0.5px #000, 2px 10px 0 0.5px #000, 1px 10px 0 0.5px #000, 0px 10px 0 0.5px #000, 2px -10px 0 0.5px #000, 1px -10px 0 0.5px #000, -10px 0px 0 0.5px #000, -10px 1px 0 0.5px #000, -10px -1px 0 0.5px #000, -10px 2px 0 0.5px #000, -10px -2px 0 0.5px #000, -10px -3px 0 0.5px #000, -10px 3px 0 0.5px #000, -9px -4px 0 0.5px #000, -9px 4px 0 0.5px #000, -9px -5px 0 0.5px #000, -9px 5px 0 0.5px #000, -8px -6px 0 0.5px #000, -8px 6px 0 0.5px #000, -7px -7px 0 0.5px #000, -7px 7px 0 0.5px #000, -6px -8px 0 0.5px #000, -6px 8px 0 0.5px #000, -5px -9px 0 0.5px #000, -5px 9px 0 0.5px #000, -4px -9px 0 0.5px #000, -4px 9px 0 0.5px #000, -3px -10px 0 0.5px #000, -3px 10px 0 0.5px #000, -2px 10px 0 0.5px #000, -1px 10px 0 0.5px #000, -2px -10px 0 0.5px #000, -1px -10px 0 0.5px #000, 0px -10px 0 0.5px #000;
-}
-
-#game .score-board .stat #game-stat.sunglass::after {
-  -webkit-box-shadow: 6px -3px 0 0.5px #fff, 5px -2px 0 0.5px #fff, -1px -3px 0 0.5px #fff, -2px -2px 0 0.5px #fff, 2px -3px 0 1px #000, 3px -3px 0 1px #000, 0px 5px 0 0.5px #000, 1px 5px 0 0.5px #000, -1px 5px 0 0.5px #000, -2px 5px 0 0.5px #000, 2px 5px 0 0.5px #000, 3px 4px 0 0.5px #000, -3px 4px 0 0.5px #000, -4px 3px 0 0.5px #000, 4px 3px 0 0.5px #000, 10px 0px 0 0.5px #000, 10px 1px 0 0.5px #000, 10px -1px 0 0.5px #000, 10px 2px 0 0.5px #000, 10px -2px 0 0.5px #000, 10px -3px 0 0.5px #000, 10px 3px 0 0.5px #000, 9px -4px 0 0.5px #000, 9px 4px 0 0.5px #000, 9px -5px 0 0.5px #000, 9px 5px 0 0.5px #000, 8px -6px 0 0.5px #000, 8px 6px 0 0.5px #000, 7px -7px 0 0.5px #000, 7px 7px 0 0.5px #000, 6px -8px 0 0.5px #000, 6px 8px 0 0.5px #000, 5px -9px 0 0.5px #000, 5px 9px 0 0.5px #000, 4px -9px 0 0.5px #000, 4px 9px 0 0.5px #000, 3px -10px 0 0.5px #000, 3px 10px 0 0.5px #000, 2px 10px 0 0.5px #000, 1px 10px 0 0.5px #000, 0px 10px 0 0.5px #000, 2px -10px 0 0.5px #000, 1px -10px 0 0.5px #000, -10px 0px 0 0.5px #000, -10px 1px 0 0.5px #000, -10px -1px 0 0.5px #000, -10px 2px 0 0.5px #000, -10px -2px 0 0.5px #000, -10px -3px 0 0.5px #000, -10px 3px 0 0.5px #000, -9px -4px 0 0.5px #000, -9px 4px 0 0.5px #000, -9px -5px 0 0.5px #000, -9px 5px 0 0.5px #000, -8px -6px 0 0.5px #000, -8px 6px 0 0.5px #000, -7px -7px 0 0.5px #000, -7px 7px 0 0.5px #000, -6px -8px 0 0.5px #000, -6px 8px 0 0.5px #000, -5px -9px 0 0.5px #000, -5px 9px 0 0.5px #000, -4px -9px 0 0.5px #000, -4px 9px 0 0.5px #000, -3px -10px 0 0.5px #000, -3px 10px 0 0.5px #000, -2px 10px 0 0.5px #000, -1px 10px 0 0.5px #000, -2px -10px 0 0.5px #000, -1px -10px 0 0.5px #000, 0px -10px 0 0.5px #000, -6px -4px 0 1px #000, -4px -4px 0 1px #000, -2px -4px 0 1px #000, 0px -4px 0 1px #000, 2px -4px 0 1px #000, 4px -4px 0 1px #000, 6px -4px 0 1px #000, -5px -2px 0 1px #000, -3px -2px 0 1px #000, -1px -2px 0 1px #000, 2px -2px 0 1px #000, 4px -2px 0 1px #000, 6px -2px 0 1px #000, -3px -2px 0 2px #000, 4px -2px 0 2px #000;
-          box-shadow: 6px -3px 0 0.5px #fff, 5px -2px 0 0.5px #fff, -1px -3px 0 0.5px #fff, -2px -2px 0 0.5px #fff, 2px -3px 0 1px #000, 3px -3px 0 1px #000, 0px 5px 0 0.5px #000, 1px 5px 0 0.5px #000, -1px 5px 0 0.5px #000, -2px 5px 0 0.5px #000, 2px 5px 0 0.5px #000, 3px 4px 0 0.5px #000, -3px 4px 0 0.5px #000, -4px 3px 0 0.5px #000, 4px 3px 0 0.5px #000, 10px 0px 0 0.5px #000, 10px 1px 0 0.5px #000, 10px -1px 0 0.5px #000, 10px 2px 0 0.5px #000, 10px -2px 0 0.5px #000, 10px -3px 0 0.5px #000, 10px 3px 0 0.5px #000, 9px -4px 0 0.5px #000, 9px 4px 0 0.5px #000, 9px -5px 0 0.5px #000, 9px 5px 0 0.5px #000, 8px -6px 0 0.5px #000, 8px 6px 0 0.5px #000, 7px -7px 0 0.5px #000, 7px 7px 0 0.5px #000, 6px -8px 0 0.5px #000, 6px 8px 0 0.5px #000, 5px -9px 0 0.5px #000, 5px 9px 0 0.5px #000, 4px -9px 0 0.5px #000, 4px 9px 0 0.5px #000, 3px -10px 0 0.5px #000, 3px 10px 0 0.5px #000, 2px 10px 0 0.5px #000, 1px 10px 0 0.5px #000, 0px 10px 0 0.5px #000, 2px -10px 0 0.5px #000, 1px -10px 0 0.5px #000, -10px 0px 0 0.5px #000, -10px 1px 0 0.5px #000, -10px -1px 0 0.5px #000, -10px 2px 0 0.5px #000, -10px -2px 0 0.5px #000, -10px -3px 0 0.5px #000, -10px 3px 0 0.5px #000, -9px -4px 0 0.5px #000, -9px 4px 0 0.5px #000, -9px -5px 0 0.5px #000, -9px 5px 0 0.5px #000, -8px -6px 0 0.5px #000, -8px 6px 0 0.5px #000, -7px -7px 0 0.5px #000, -7px 7px 0 0.5px #000, -6px -8px 0 0.5px #000, -6px 8px 0 0.5px #000, -5px -9px 0 0.5px #000, -5px 9px 0 0.5px #000, -4px -9px 0 0.5px #000, -4px 9px 0 0.5px #000, -3px -10px 0 0.5px #000, -3px 10px 0 0.5px #000, -2px 10px 0 0.5px #000, -1px 10px 0 0.5px #000, -2px -10px 0 0.5px #000, -1px -10px 0 0.5px #000, 0px -10px 0 0.5px #000, -6px -4px 0 1px #000, -4px -4px 0 1px #000, -2px -4px 0 1px #000, 0px -4px 0 1px #000, 2px -4px 0 1px #000, 4px -4px 0 1px #000, 6px -4px 0 1px #000, -5px -2px 0 1px #000, -3px -2px 0 1px #000, -1px -2px 0 1px #000, 2px -2px 0 1px #000, 4px -2px 0 1px #000, 6px -2px 0 1px #000, -3px -2px 0 2px #000, 4px -2px 0 2px #000;
-}
-
-#game .score-board .stat #game-stat.sad::after {
-  -webkit-box-shadow: -3px -3px 0 1px #000, 3px -3px 0 1px #000, 0px 3px 0 0.5px #000, 1px 3px 0 0.5px #000, -1px 3px 0 0.5px #000, -2px 3px 0 0.5px #000, 2px 3px 0 0.5px #000, 3px 4px 0 0.5px #000, -3px 4px 0 0.5px #000, -4px 5px 0 0.5px #000, 4px 5px 0 0.5px #000, 10px 0px 0 0.5px #000, 10px 1px 0 0.5px #000, 10px -1px 0 0.5px #000, 10px 2px 0 0.5px #000, 10px -2px 0 0.5px #000, 10px -3px 0 0.5px #000, 10px 3px 0 0.5px #000, 9px -4px 0 0.5px #000, 9px 4px 0 0.5px #000, 9px -5px 0 0.5px #000, 9px 5px 0 0.5px #000, 8px -6px 0 0.5px #000, 8px 6px 0 0.5px #000, 7px -7px 0 0.5px #000, 7px 7px 0 0.5px #000, 6px -8px 0 0.5px #000, 6px 8px 0 0.5px #000, 5px -9px 0 0.5px #000, 5px 9px 0 0.5px #000, 4px -9px 0 0.5px #000, 4px 9px 0 0.5px #000, 3px -10px 0 0.5px #000, 3px 10px 0 0.5px #000, 2px 10px 0 0.5px #000, 1px 10px 0 0.5px #000, 0px 10px 0 0.5px #000, 2px -10px 0 0.5px #000, 1px -10px 0 0.5px #000, -10px 0px 0 0.5px #000, -10px 1px 0 0.5px #000, -10px -1px 0 0.5px #000, -10px 2px 0 0.5px #000, -10px -2px 0 0.5px #000, -10px -3px 0 0.5px #000, -10px 3px 0 0.5px #000, -9px -4px 0 0.5px #000, -9px 4px 0 0.5px #000, -9px -5px 0 0.5px #000, -9px 5px 0 0.5px #000, -8px -6px 0 0.5px #000, -8px 6px 0 0.5px #000, -7px -7px 0 0.5px #000, -7px 7px 0 0.5px #000, -6px -8px 0 0.5px #000, -6px 8px 0 0.5px #000, -5px -9px 0 0.5px #000, -5px 9px 0 0.5px #000, -4px -9px 0 0.5px #000, -4px 9px 0 0.5px #000, -3px -10px 0 0.5px #000, -3px 10px 0 0.5px #000, -2px 10px 0 0.5px #000, -1px 10px 0 0.5px #000, -2px -10px 0 0.5px #000, -1px -10px 0 0.5px #000, 0px -10px 0 0.5px #000;
-          box-shadow: -3px -3px 0 1px #000, 3px -3px 0 1px #000, 0px 3px 0 0.5px #000, 1px 3px 0 0.5px #000, -1px 3px 0 0.5px #000, -2px 3px 0 0.5px #000, 2px 3px 0 0.5px #000, 3px 4px 0 0.5px #000, -3px 4px 0 0.5px #000, -4px 5px 0 0.5px #000, 4px 5px 0 0.5px #000, 10px 0px 0 0.5px #000, 10px 1px 0 0.5px #000, 10px -1px 0 0.5px #000, 10px 2px 0 0.5px #000, 10px -2px 0 0.5px #000, 10px -3px 0 0.5px #000, 10px 3px 0 0.5px #000, 9px -4px 0 0.5px #000, 9px 4px 0 0.5px #000, 9px -5px 0 0.5px #000, 9px 5px 0 0.5px #000, 8px -6px 0 0.5px #000, 8px 6px 0 0.5px #000, 7px -7px 0 0.5px #000, 7px 7px 0 0.5px #000, 6px -8px 0 0.5px #000, 6px 8px 0 0.5px #000, 5px -9px 0 0.5px #000, 5px 9px 0 0.5px #000, 4px -9px 0 0.5px #000, 4px 9px 0 0.5px #000, 3px -10px 0 0.5px #000, 3px 10px 0 0.5px #000, 2px 10px 0 0.5px #000, 1px 10px 0 0.5px #000, 0px 10px 0 0.5px #000, 2px -10px 0 0.5px #000, 1px -10px 0 0.5px #000, -10px 0px 0 0.5px #000, -10px 1px 0 0.5px #000, -10px -1px 0 0.5px #000, -10px 2px 0 0.5px #000, -10px -2px 0 0.5px #000, -10px -3px 0 0.5px #000, -10px 3px 0 0.5px #000, -9px -4px 0 0.5px #000, -9px 4px 0 0.5px #000, -9px -5px 0 0.5px #000, -9px 5px 0 0.5px #000, -8px -6px 0 0.5px #000, -8px 6px 0 0.5px #000, -7px -7px 0 0.5px #000, -7px 7px 0 0.5px #000, -6px -8px 0 0.5px #000, -6px 8px 0 0.5px #000, -5px -9px 0 0.5px #000, -5px 9px 0 0.5px #000, -4px -9px 0 0.5px #000, -4px 9px 0 0.5px #000, -3px -10px 0 0.5px #000, -3px 10px 0 0.5px #000, -2px 10px 0 0.5px #000, -1px 10px 0 0.5px #000, -2px -10px 0 0.5px #000, -1px -10px 0 0.5px #000, 0px -10px 0 0.5px #000;
-}
-
 #game .score-board .timer,
 #game .score-board .mines {
   width: 70px;
@@ -555,5 +500,87 @@ body {
 
 .full-height {
   min-height: 100%;
+}
+
+#game-stat,
+#emoji {
+  width: 98%;
+  height: 98%;
+  background-color: #c6c6c6;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: "";
+      -ms-flex-pack: "";
+          justify-content: "";
+  text-align: center;
+  border-left: 3px solid #ffffff;
+  border-top: 3px solid #ffffff;
+  border-right: 3px solid #808080;
+  border-bottom: 3px solid #808080;
+  padding: 0;
+  margin: 0;
+}
+
+#game-stat:active,
+#emoji:active {
+  border-left: 3px solid #808080;
+  border-top: 3px solid #808080;
+  border-right: 3px solid #ffffff;
+  border-bottom: 3px solid #ffffff;
+  background-color: #bcbcbc;
+}
+
+#game-stat:active::after, #game-stat:active::before,
+#emoji:active::after,
+#emoji:active::before {
+  margin-top: 1px;
+  background-color: #eaee08;
+}
+
+#game-stat::before,
+#emoji::before {
+  width: 20px;
+  height: 20px;
+  display: block;
+  content: "";
+  background-color: #fbff08;
+  border-radius: 50%;
+}
+
+#game-stat::after,
+#emoji::after {
+  width: 0;
+  height: 0;
+  display: block;
+  content: "";
+  position: absolute;
+  -webkit-box-shadow: -3px -3px 0 1px #000, 3px -3px 0 1px #000, 0px 5px 0 0.5px #000, 1px 5px 0 0.5px #000, -1px 5px 0 0.5px #000, -2px 5px 0 0.5px #000, 2px 5px 0 0.5px #000, 3px 4px 0 0.5px #000, -3px 4px 0 0.5px #000, -4px 3px 0 0.5px #000, 4px 3px 0 0.5px #000, 10px 0px 0 0.5px #000, 10px 1px 0 0.5px #000, 10px -1px 0 0.5px #000, 10px 2px 0 0.5px #000, 10px -2px 0 0.5px #000, 10px -3px 0 0.5px #000, 10px 3px 0 0.5px #000, 9px -4px 0 0.5px #000, 9px 4px 0 0.5px #000, 9px -5px 0 0.5px #000, 9px 5px 0 0.5px #000, 8px -6px 0 0.5px #000, 8px 6px 0 0.5px #000, 7px -7px 0 0.5px #000, 7px 7px 0 0.5px #000, 6px -8px 0 0.5px #000, 6px 8px 0 0.5px #000, 5px -9px 0 0.5px #000, 5px 9px 0 0.5px #000, 4px -9px 0 0.5px #000, 4px 9px 0 0.5px #000, 3px -10px 0 0.5px #000, 3px 10px 0 0.5px #000, 2px 10px 0 0.5px #000, 1px 10px 0 0.5px #000, 0px 10px 0 0.5px #000, 2px -10px 0 0.5px #000, 1px -10px 0 0.5px #000, -10px 0px 0 0.5px #000, -10px 1px 0 0.5px #000, -10px -1px 0 0.5px #000, -10px 2px 0 0.5px #000, -10px -2px 0 0.5px #000, -10px -3px 0 0.5px #000, -10px 3px 0 0.5px #000, -9px -4px 0 0.5px #000, -9px 4px 0 0.5px #000, -9px -5px 0 0.5px #000, -9px 5px 0 0.5px #000, -8px -6px 0 0.5px #000, -8px 6px 0 0.5px #000, -7px -7px 0 0.5px #000, -7px 7px 0 0.5px #000, -6px -8px 0 0.5px #000, -6px 8px 0 0.5px #000, -5px -9px 0 0.5px #000, -5px 9px 0 0.5px #000, -4px -9px 0 0.5px #000, -4px 9px 0 0.5px #000, -3px -10px 0 0.5px #000, -3px 10px 0 0.5px #000, -2px 10px 0 0.5px #000, -1px 10px 0 0.5px #000, -2px -10px 0 0.5px #000, -1px -10px 0 0.5px #000, 0px -10px 0 0.5px #000;
+          box-shadow: -3px -3px 0 1px #000, 3px -3px 0 1px #000, 0px 5px 0 0.5px #000, 1px 5px 0 0.5px #000, -1px 5px 0 0.5px #000, -2px 5px 0 0.5px #000, 2px 5px 0 0.5px #000, 3px 4px 0 0.5px #000, -3px 4px 0 0.5px #000, -4px 3px 0 0.5px #000, 4px 3px 0 0.5px #000, 10px 0px 0 0.5px #000, 10px 1px 0 0.5px #000, 10px -1px 0 0.5px #000, 10px 2px 0 0.5px #000, 10px -2px 0 0.5px #000, 10px -3px 0 0.5px #000, 10px 3px 0 0.5px #000, 9px -4px 0 0.5px #000, 9px 4px 0 0.5px #000, 9px -5px 0 0.5px #000, 9px 5px 0 0.5px #000, 8px -6px 0 0.5px #000, 8px 6px 0 0.5px #000, 7px -7px 0 0.5px #000, 7px 7px 0 0.5px #000, 6px -8px 0 0.5px #000, 6px 8px 0 0.5px #000, 5px -9px 0 0.5px #000, 5px 9px 0 0.5px #000, 4px -9px 0 0.5px #000, 4px 9px 0 0.5px #000, 3px -10px 0 0.5px #000, 3px 10px 0 0.5px #000, 2px 10px 0 0.5px #000, 1px 10px 0 0.5px #000, 0px 10px 0 0.5px #000, 2px -10px 0 0.5px #000, 1px -10px 0 0.5px #000, -10px 0px 0 0.5px #000, -10px 1px 0 0.5px #000, -10px -1px 0 0.5px #000, -10px 2px 0 0.5px #000, -10px -2px 0 0.5px #000, -10px -3px 0 0.5px #000, -10px 3px 0 0.5px #000, -9px -4px 0 0.5px #000, -9px 4px 0 0.5px #000, -9px -5px 0 0.5px #000, -9px 5px 0 0.5px #000, -8px -6px 0 0.5px #000, -8px 6px 0 0.5px #000, -7px -7px 0 0.5px #000, -7px 7px 0 0.5px #000, -6px -8px 0 0.5px #000, -6px 8px 0 0.5px #000, -5px -9px 0 0.5px #000, -5px 9px 0 0.5px #000, -4px -9px 0 0.5px #000, -4px 9px 0 0.5px #000, -3px -10px 0 0.5px #000, -3px 10px 0 0.5px #000, -2px 10px 0 0.5px #000, -1px 10px 0 0.5px #000, -2px -10px 0 0.5px #000, -1px -10px 0 0.5px #000, 0px -10px 0 0.5px #000;
+}
+
+#game-stat.sunglasses::after,
+#emoji.sunglasses::after {
+  -webkit-box-shadow: 6px -3px 0 0.5px #fff, 5px -2px 0 0.5px #fff, -1px -3px 0 0.5px #fff, -2px -2px 0 0.5px #fff, 2px -3px 0 1px #000, 3px -3px 0 1px #000, 0px 5px 0 0.5px #000, 1px 5px 0 0.5px #000, -1px 5px 0 0.5px #000, -2px 5px 0 0.5px #000, 2px 5px 0 0.5px #000, 3px 4px 0 0.5px #000, -3px 4px 0 0.5px #000, -4px 3px 0 0.5px #000, 4px 3px 0 0.5px #000, 10px 0px 0 0.5px #000, 10px 1px 0 0.5px #000, 10px -1px 0 0.5px #000, 10px 2px 0 0.5px #000, 10px -2px 0 0.5px #000, 10px -3px 0 0.5px #000, 10px 3px 0 0.5px #000, 9px -4px 0 0.5px #000, 9px 4px 0 0.5px #000, 9px -5px 0 0.5px #000, 9px 5px 0 0.5px #000, 8px -6px 0 0.5px #000, 8px 6px 0 0.5px #000, 7px -7px 0 0.5px #000, 7px 7px 0 0.5px #000, 6px -8px 0 0.5px #000, 6px 8px 0 0.5px #000, 5px -9px 0 0.5px #000, 5px 9px 0 0.5px #000, 4px -9px 0 0.5px #000, 4px 9px 0 0.5px #000, 3px -10px 0 0.5px #000, 3px 10px 0 0.5px #000, 2px 10px 0 0.5px #000, 1px 10px 0 0.5px #000, 0px 10px 0 0.5px #000, 2px -10px 0 0.5px #000, 1px -10px 0 0.5px #000, -10px 0px 0 0.5px #000, -10px 1px 0 0.5px #000, -10px -1px 0 0.5px #000, -10px 2px 0 0.5px #000, -10px -2px 0 0.5px #000, -10px -3px 0 0.5px #000, -10px 3px 0 0.5px #000, -9px -4px 0 0.5px #000, -9px 4px 0 0.5px #000, -9px -5px 0 0.5px #000, -9px 5px 0 0.5px #000, -8px -6px 0 0.5px #000, -8px 6px 0 0.5px #000, -7px -7px 0 0.5px #000, -7px 7px 0 0.5px #000, -6px -8px 0 0.5px #000, -6px 8px 0 0.5px #000, -5px -9px 0 0.5px #000, -5px 9px 0 0.5px #000, -4px -9px 0 0.5px #000, -4px 9px 0 0.5px #000, -3px -10px 0 0.5px #000, -3px 10px 0 0.5px #000, -2px 10px 0 0.5px #000, -1px 10px 0 0.5px #000, -2px -10px 0 0.5px #000, -1px -10px 0 0.5px #000, 0px -10px 0 0.5px #000, -6px -4px 0 1px #000, -4px -4px 0 1px #000, -2px -4px 0 1px #000, 0px -4px 0 1px #000, 2px -4px 0 1px #000, 4px -4px 0 1px #000, 6px -4px 0 1px #000, -5px -2px 0 1px #000, -3px -2px 0 1px #000, -1px -2px 0 1px #000, 2px -2px 0 1px #000, 4px -2px 0 1px #000, 6px -2px 0 1px #000, -3px -2px 0 2px #000, 4px -2px 0 2px #000;
+          box-shadow: 6px -3px 0 0.5px #fff, 5px -2px 0 0.5px #fff, -1px -3px 0 0.5px #fff, -2px -2px 0 0.5px #fff, 2px -3px 0 1px #000, 3px -3px 0 1px #000, 0px 5px 0 0.5px #000, 1px 5px 0 0.5px #000, -1px 5px 0 0.5px #000, -2px 5px 0 0.5px #000, 2px 5px 0 0.5px #000, 3px 4px 0 0.5px #000, -3px 4px 0 0.5px #000, -4px 3px 0 0.5px #000, 4px 3px 0 0.5px #000, 10px 0px 0 0.5px #000, 10px 1px 0 0.5px #000, 10px -1px 0 0.5px #000, 10px 2px 0 0.5px #000, 10px -2px 0 0.5px #000, 10px -3px 0 0.5px #000, 10px 3px 0 0.5px #000, 9px -4px 0 0.5px #000, 9px 4px 0 0.5px #000, 9px -5px 0 0.5px #000, 9px 5px 0 0.5px #000, 8px -6px 0 0.5px #000, 8px 6px 0 0.5px #000, 7px -7px 0 0.5px #000, 7px 7px 0 0.5px #000, 6px -8px 0 0.5px #000, 6px 8px 0 0.5px #000, 5px -9px 0 0.5px #000, 5px 9px 0 0.5px #000, 4px -9px 0 0.5px #000, 4px 9px 0 0.5px #000, 3px -10px 0 0.5px #000, 3px 10px 0 0.5px #000, 2px 10px 0 0.5px #000, 1px 10px 0 0.5px #000, 0px 10px 0 0.5px #000, 2px -10px 0 0.5px #000, 1px -10px 0 0.5px #000, -10px 0px 0 0.5px #000, -10px 1px 0 0.5px #000, -10px -1px 0 0.5px #000, -10px 2px 0 0.5px #000, -10px -2px 0 0.5px #000, -10px -3px 0 0.5px #000, -10px 3px 0 0.5px #000, -9px -4px 0 0.5px #000, -9px 4px 0 0.5px #000, -9px -5px 0 0.5px #000, -9px 5px 0 0.5px #000, -8px -6px 0 0.5px #000, -8px 6px 0 0.5px #000, -7px -7px 0 0.5px #000, -7px 7px 0 0.5px #000, -6px -8px 0 0.5px #000, -6px 8px 0 0.5px #000, -5px -9px 0 0.5px #000, -5px 9px 0 0.5px #000, -4px -9px 0 0.5px #000, -4px 9px 0 0.5px #000, -3px -10px 0 0.5px #000, -3px 10px 0 0.5px #000, -2px 10px 0 0.5px #000, -1px 10px 0 0.5px #000, -2px -10px 0 0.5px #000, -1px -10px 0 0.5px #000, 0px -10px 0 0.5px #000, -6px -4px 0 1px #000, -4px -4px 0 1px #000, -2px -4px 0 1px #000, 0px -4px 0 1px #000, 2px -4px 0 1px #000, 4px -4px 0 1px #000, 6px -4px 0 1px #000, -5px -2px 0 1px #000, -3px -2px 0 1px #000, -1px -2px 0 1px #000, 2px -2px 0 1px #000, 4px -2px 0 1px #000, 6px -2px 0 1px #000, -3px -2px 0 2px #000, 4px -2px 0 2px #000;
+}
+
+#game-stat.sad::after,
+#emoji.sad::after {
+  -webkit-box-shadow: -3px -3px 0 1px #000, 3px -3px 0 1px #000, 0px 3px 0 0.5px #000, 1px 3px 0 0.5px #000, -1px 3px 0 0.5px #000, -2px 3px 0 0.5px #000, 2px 3px 0 0.5px #000, 3px 4px 0 0.5px #000, -3px 4px 0 0.5px #000, -4px 5px 0 0.5px #000, 4px 5px 0 0.5px #000, 10px 0px 0 0.5px #000, 10px 1px 0 0.5px #000, 10px -1px 0 0.5px #000, 10px 2px 0 0.5px #000, 10px -2px 0 0.5px #000, 10px -3px 0 0.5px #000, 10px 3px 0 0.5px #000, 9px -4px 0 0.5px #000, 9px 4px 0 0.5px #000, 9px -5px 0 0.5px #000, 9px 5px 0 0.5px #000, 8px -6px 0 0.5px #000, 8px 6px 0 0.5px #000, 7px -7px 0 0.5px #000, 7px 7px 0 0.5px #000, 6px -8px 0 0.5px #000, 6px 8px 0 0.5px #000, 5px -9px 0 0.5px #000, 5px 9px 0 0.5px #000, 4px -9px 0 0.5px #000, 4px 9px 0 0.5px #000, 3px -10px 0 0.5px #000, 3px 10px 0 0.5px #000, 2px 10px 0 0.5px #000, 1px 10px 0 0.5px #000, 0px 10px 0 0.5px #000, 2px -10px 0 0.5px #000, 1px -10px 0 0.5px #000, -10px 0px 0 0.5px #000, -10px 1px 0 0.5px #000, -10px -1px 0 0.5px #000, -10px 2px 0 0.5px #000, -10px -2px 0 0.5px #000, -10px -3px 0 0.5px #000, -10px 3px 0 0.5px #000, -9px -4px 0 0.5px #000, -9px 4px 0 0.5px #000, -9px -5px 0 0.5px #000, -9px 5px 0 0.5px #000, -8px -6px 0 0.5px #000, -8px 6px 0 0.5px #000, -7px -7px 0 0.5px #000, -7px 7px 0 0.5px #000, -6px -8px 0 0.5px #000, -6px 8px 0 0.5px #000, -5px -9px 0 0.5px #000, -5px 9px 0 0.5px #000, -4px -9px 0 0.5px #000, -4px 9px 0 0.5px #000, -3px -10px 0 0.5px #000, -3px 10px 0 0.5px #000, -2px 10px 0 0.5px #000, -1px 10px 0 0.5px #000, -2px -10px 0 0.5px #000, -1px -10px 0 0.5px #000, 0px -10px 0 0.5px #000;
+          box-shadow: -3px -3px 0 1px #000, 3px -3px 0 1px #000, 0px 3px 0 0.5px #000, 1px 3px 0 0.5px #000, -1px 3px 0 0.5px #000, -2px 3px 0 0.5px #000, 2px 3px 0 0.5px #000, 3px 4px 0 0.5px #000, -3px 4px 0 0.5px #000, -4px 5px 0 0.5px #000, 4px 5px 0 0.5px #000, 10px 0px 0 0.5px #000, 10px 1px 0 0.5px #000, 10px -1px 0 0.5px #000, 10px 2px 0 0.5px #000, 10px -2px 0 0.5px #000, 10px -3px 0 0.5px #000, 10px 3px 0 0.5px #000, 9px -4px 0 0.5px #000, 9px 4px 0 0.5px #000, 9px -5px 0 0.5px #000, 9px 5px 0 0.5px #000, 8px -6px 0 0.5px #000, 8px 6px 0 0.5px #000, 7px -7px 0 0.5px #000, 7px 7px 0 0.5px #000, 6px -8px 0 0.5px #000, 6px 8px 0 0.5px #000, 5px -9px 0 0.5px #000, 5px 9px 0 0.5px #000, 4px -9px 0 0.5px #000, 4px 9px 0 0.5px #000, 3px -10px 0 0.5px #000, 3px 10px 0 0.5px #000, 2px 10px 0 0.5px #000, 1px 10px 0 0.5px #000, 0px 10px 0 0.5px #000, 2px -10px 0 0.5px #000, 1px -10px 0 0.5px #000, -10px 0px 0 0.5px #000, -10px 1px 0 0.5px #000, -10px -1px 0 0.5px #000, -10px 2px 0 0.5px #000, -10px -2px 0 0.5px #000, -10px -3px 0 0.5px #000, -10px 3px 0 0.5px #000, -9px -4px 0 0.5px #000, -9px 4px 0 0.5px #000, -9px -5px 0 0.5px #000, -9px 5px 0 0.5px #000, -8px -6px 0 0.5px #000, -8px 6px 0 0.5px #000, -7px -7px 0 0.5px #000, -7px 7px 0 0.5px #000, -6px -8px 0 0.5px #000, -6px 8px 0 0.5px #000, -5px -9px 0 0.5px #000, -5px 9px 0 0.5px #000, -4px -9px 0 0.5px #000, -4px 9px 0 0.5px #000, -3px -10px 0 0.5px #000, -3px 10px 0 0.5px #000, -2px 10px 0 0.5px #000, -1px 10px 0 0.5px #000, -2px -10px 0 0.5px #000, -1px -10px 0 0.5px #000, 0px -10px 0 0.5px #000;
 }
 /*# sourceMappingURL=main.css.map */
