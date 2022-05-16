@@ -17,8 +17,6 @@ class Game {
 
     this.stateButton.addEventListener("click", () => {
       document.querySelector(".start-panel").removeAttribute("style");
-      let board = document.querySelector(".board");
-      board.classList.add(document.querySelector("#difficulty").value);
       let gameBoard = document.querySelector("#game");
       gameBoard.classList.remove("full-height");
       gameBoard.classList.add("hidden");
@@ -79,13 +77,13 @@ class Game {
   gameState(stat) {
     this.status = stat;
     if (this.status === "win") {
-      this.stateButton.classList.add("sunglass");
+      this.stateButton.classList.add("sunglasses");
       this.board.stopTimer();
     } else if (this.status === "lose") {
       this.stateButton.classList.add("sad");
       this.board.stopTimer();
     } else if (this.status === "idle") {
-      this.stateButton.classList.remove("sad", "sunglass");
+      this.stateButton.classList.remove("sad", "sunglasses");
     }
   }
 
@@ -97,23 +95,24 @@ class Game {
 //Create a game
 let game = new Game(0);
 
-//Add event to the dropdown list (difficulty)
-document.querySelector("#difficulty").addEventListener("change", (x) => {
-  game.difficulty = x.target.selectedIndex;
-});
-
-//Add event to button (Start Game)
-document.querySelector("#start-game").addEventListener("click", () => {
-  document.querySelector(".start-panel").style = "display:none";
-  let board = document.querySelector(".board");
-  board.classList.add(document.querySelector("#difficulty").value);
-  let gameBoard = document.querySelector("#game");
-  gameBoard.classList.add("full-height");
-  gameBoard.classList.remove("hidden");
-  game.startGame(board);
-});
-
 //Need to exec once
 (function () {
   document.querySelector("#game").classList.add("hidden");
+  //Get start buttons
+  const startButtons = document.querySelectorAll(".start-button");
+
+  //Add event to buttons (Start Game)
+  startButtons.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      console.log(e.target.dataset.difficulty);
+      game.difficulty = e.target.dataset.difficulty;
+      document.querySelector(".start-panel").style = "display:none";
+      let board = document.querySelector(".board");
+      board.classList.add(`difficulty-${e.target.dataset.difficulty}`);
+      let gameBoard = document.querySelector("#game");
+      gameBoard.classList.add("full-height");
+      gameBoard.classList.remove("hidden");
+      game.startGame(board);
+    });
+  });
 })();
