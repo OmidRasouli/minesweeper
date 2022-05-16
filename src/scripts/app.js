@@ -22,8 +22,9 @@ class Game {
       gameBoard.classList.add("hidden");
       this.board.stopTimer();
       buttons.clear();
-      let difficulty = game.difficulty;
-      game = new Game(difficulty);
+      let board = document.querySelector(".board");
+      board.classList.remove(`difficulty-${this.difficulty}`);
+      game = new Game(0);
     });
     this.gameState("idle");
   }
