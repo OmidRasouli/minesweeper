@@ -75,6 +75,7 @@ class Game {
     }
   }
 
+  //Set the state of the game
   gameState(stat) {
     this.status = stat;
     if (this.status === "win") {
