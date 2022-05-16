@@ -22,8 +22,9 @@ class Game {
       gameBoard.classList.add("hidden");
       this.board.stopTimer();
       buttons.clear();
-      let difficulty = game.difficulty;
-      game = new Game(difficulty);
+      let board = document.querySelector(".board");
+      board.classList.remove(`difficulty-${this.difficulty}`);
+      game = new Game(0);
     });
     this.gameState("idle");
   }
@@ -43,7 +44,6 @@ class Game {
 
     if (this.board.board[i][j] === "*") {
       //Is this a mine?
-      console.log("You lose!");
       //buttons.get(`${i},${j}`).innerHTML = this.board.board[i][j];
       buttons.get(`${i},${j}`).classList.remove("mark");
       buttons.get(`${i},${j}`).classList.add("mine");
@@ -54,7 +54,6 @@ class Game {
     }
     //Is there a mine nearby?
     if (this.board.board[i][j] > 0) {
-      console.log("Oops!");
       buttons.get(`${i},${j}`).classList.remove("mark");
       let btn = buttons.get(`${i},${j}`);
       btn.innerHTML = this.board.board[i][j];
@@ -68,12 +67,12 @@ class Game {
     if (this.board.board[i][j] === 0) {
       //Check cell and its neighbours
       this.board.freeCells(i, j);
-      console.log("Yey!");
       buttons.get(`${i},${j}`).classList.remove("mark");
       return null;
     }
   }
 
+  //Set the state of the game
   gameState(stat) {
     this.status = stat;
     if (this.status === "win") {
@@ -104,7 +103,6 @@ let game = new Game(0);
   //Add event to buttons (Start Game)
   startButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-      console.log(e.target.dataset.difficulty);
       game.difficulty = e.target.dataset.difficulty;
       document.querySelector(".start-panel").style = "display:none";
       let board = document.querySelector(".board");
