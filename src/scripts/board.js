@@ -69,7 +69,6 @@ class Board {
     //Generate the cells in the HTML file
     this.generateCells(boardEl, game);
     this.timer = new Timer();
-    console.log(this.board);
   }
 
   //Add a number to the cells which are around the mine
@@ -324,7 +323,6 @@ class Board {
     );
 
     let correctAnswersCount = correctAnswers.reduce((x, y) => x + y);
-    console.log(correctAnswersCount);
     game.checkGame(correctAnswersCount, this.mines.count, this.size);
   }
 
