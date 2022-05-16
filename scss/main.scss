@@ -454,3 +454,7 @@ body {
       0px -10px 0 0.5px #000;
   }
 }
+
+::selection {
+  background-color: transparent;
+}
